@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MealController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,9 @@ Route::middleware(['auth','verified'])
         Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
         Route::resource('restaurants', RestaurantController::class)->parameters(['restaurants' => 'restaurant:slug']);
         Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
+        Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:slug']);
+        
+
         
     });
 
