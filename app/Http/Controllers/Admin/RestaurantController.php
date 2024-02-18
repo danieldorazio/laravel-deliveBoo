@@ -1,7 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRestaurantRequest;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -13,7 +16,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $restaurants = Restaurant::all();
+        return view('admin.restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -43,9 +47,9 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
