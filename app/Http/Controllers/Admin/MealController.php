@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Meal;
 use Illuminate\Http\Request;
 
 class MealController extends Controller
@@ -13,7 +15,8 @@ class MealController extends Controller
      */
     public function index()
     {
-        //
+        $meals = Meal::all();
+        return view('admin.meals.index', compact('meals'));
     }
 
     /**
@@ -43,9 +46,9 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Meal $meal)
     {
-        //
+        return view('admin.meals.show', compact('meal'));
     }
 
     /**
