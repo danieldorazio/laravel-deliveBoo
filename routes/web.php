@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MealController;
 use App\Http\Controllers\Admin\OrderController;
@@ -43,10 +44,8 @@ Route::middleware(['auth','verified'])
         Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
         Route::resource('restaurants', RestaurantController::class)->parameters(['restaurants' => 'restaurant:slug']);
         Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
-        Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:slug']);
-        
-
-        
+        Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:id']);
+        Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']);
     });
 
 require __DIR__.'/auth.php';
