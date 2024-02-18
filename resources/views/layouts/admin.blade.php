@@ -75,6 +75,12 @@
                                     <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> Meals
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.orders.index') }}">
+                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i> Orders
+                                </a>
+                            </li>
                         </ul>
 
 
