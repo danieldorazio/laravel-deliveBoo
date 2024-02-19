@@ -27,7 +27,7 @@ class StoreRestaurantRequest extends FormRequest
             'restaurant_name' => 'required|min:6|max:200',
             'image' => 'required',
             'slug' => 'required',
-            'piva_user' => 'required|min:11|max:11',
+            'piva_user' => 'required|min:11|max:11|unique:restaurants',
             'street' => 'required',
             'time_open' => 'required',
             'time_close' => 'nullable'
