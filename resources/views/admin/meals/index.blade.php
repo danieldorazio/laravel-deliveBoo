@@ -30,5 +30,9 @@
                 <p>No meals available</p>
             </div>
         @endif
+
+        <div class="text-end my-5">
+            <a class="btn btn-outline-secondary" href="{{ route('admin.meals.create') }}">Add a new meal</a>
+        </div>
     </div>
 @endsection
