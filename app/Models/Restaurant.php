@@ -11,4 +11,9 @@ class Restaurant extends Model
 
     protected $fillable = ['restaurant_name','slug','image', 'street', 'time_open', 'time_close', 'piva_user'];
 
+    protected function setRestaurantNameAttribute($_name) {
+        $this->attributes['restaurant_name'] = $_name;
+        $this->attributes['slug'] = Str::slug($_name);
+    }
+
 }
