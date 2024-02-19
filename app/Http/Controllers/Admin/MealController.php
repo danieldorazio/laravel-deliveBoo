@@ -63,9 +63,9 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Meal $meal)
     {
-        //
+        return view('admin.meals.edit', compact('meal'));
     }
 
     /**
@@ -75,9 +75,13 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Meal $meal)
     {
-        //
+        $form_data = $request->validated();
+
+        $meal->update($form_data);
+
+        return redirect()->route('admin.meals.show', ['meals' => $meal->slug]);
     }
 
     /**
