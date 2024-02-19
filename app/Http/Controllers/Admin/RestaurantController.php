@@ -76,7 +76,7 @@ class RestaurantController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  $restaurant
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Restaurant $restaurant)
@@ -90,11 +90,13 @@ class RestaurantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Restaurant $restaurant)
     {
-        //
+        $restaurant->delete();
+
+        return redirect()->route('admin.restaurants.index')->with('message', "$restaurant->restaurant_name deleted succesfully");
     }
 }

@@ -21,6 +21,13 @@
                     <td>
                         <a class="btn btn-success" href="{{route('admin.restaurants.show', ['restaurant' => $restaurant->slug]) }}">Details</a>
                         <a class="btn btn-outline-warning" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Edit</a>
+                        <form action="{{ route('admin.restaurants.destroy', ['restaurant' => $restaurant->slug]) }}" class="d-inline-block" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-outline-danger" type="submit" onclick="return confirm('{{ __('Are you sure you want to delete this item?') }}')">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                   </tr>
                 @endforeach 
