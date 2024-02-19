@@ -42,11 +42,11 @@
                 </div>
 
                 {{-- Prezzo Piatto --}}
-                <div>
+                <div class="mb-3">
+                    <label for="price">Price</label>
                     <input placeholder="Inserisci il prezzo" type="text"
                         class="form-control @error('price') is-invalid  @enderror" id="price" name="price"
                         value="{{ old('price') }}">
-                    <label for="price">Price</label>
                     @error('price')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -61,10 +61,13 @@
                     </label>
                 </div> --}}
 
-                <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
-                    <option value="1" selected>Piatto disponibile</option>
-                    <option value="0">Piatto non disponibile</option>
-                </select>
+                <div class="mb-3">
+                    <label for="available">Disponibilitá</label>
+                    <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
+                        <option value="1" selected>Piatto disponibile</option>
+                        <option value="0">Piatto non disponibile</option>
+                    </select>
+                </div>
 
                 <button type="submit" class="btn btn-success">Salva</button>
             </form>
