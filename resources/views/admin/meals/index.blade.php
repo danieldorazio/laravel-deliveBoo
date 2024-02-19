@@ -24,7 +24,7 @@
                         <form action="{{ route('admin.meals.destroy', ['meal' => $meal->slug]) }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger" type="submit" onclick="return confirm('{{ __('Are you sure you want to delete this item?') }}')">
+                            <button class="btn btn-outline-danger delete-btn" type="submit" data-title="{{ $meal->name }}">
                                 Delete
                             </button>
                         </form>                    
@@ -43,4 +43,5 @@
             <a class="btn btn-outline-secondary" href="{{ route('admin.meals.create') }}">Add a new meal</a>
         </div>
     </div>
+    @include('partials.delete_modal')
 @endsection
