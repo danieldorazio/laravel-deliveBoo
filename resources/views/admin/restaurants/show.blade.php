@@ -8,9 +8,15 @@
 
     {{-- Image --}}
     <div class="mt-4 w-50">
+        @if ($restaurant->image)
+        <div>
+            <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+        </div>
+    @else
         <p>
-            <strong>Image: </strong>{{ $restaurant->image ?? 'Not available ' }}
+            <strong>Image : Not available </strong>
         </p>
+    @endif
     </div>
 
     {{-- Slug
