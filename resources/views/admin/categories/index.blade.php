@@ -22,7 +22,7 @@
                     <th scope="row">{{$category->id}}</th>
                     <td>{{$category->name}}</td>
                     <td>{{$category->slug}}</td>
-                    <td>{{$category->image_categoty}}</td>
+                    <td>{{$category->image_category}}</td>
                     <td>{{$category->image_header}}</td>
                   </tr>
                 @endforeach 
