@@ -24,6 +24,28 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
+            'restaurant_name' => 'required|min:6|max:200',
+            'image' => 'required',
+            'slug' => 'required',
+            'piva_user' => 'required|min:11|max:11',
+            'street' => 'required',
+            'time_open' => 'required',
+            'time_close' => 'nullable'
+        ];
+    }
+
+    public function messages() {
+        return [
+            'restaurant_name.required' => 'A name is required',
+            'restaurant_name.min' => 'The name must be at least :min characters long',
+            'restaurant_name.max' => 'The name must be no longer than :max characters',
+            'image.required' => 'An image is required',
+            'slug.required' => 'A slug title is required',
+            'piva_user.min' => 'The P. Iva must be at least :min characters long',
+            'piva_user.max' => 'The P. Iva must be no longer than :max characters long',
+            'street.required' => 'An address is required',
+            'time_open.required' => 'An opeing time is required',
+            'time_close.required' => 'A closing time is required',
         ];
     }
 }

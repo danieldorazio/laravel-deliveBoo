@@ -36,9 +36,9 @@ class RestaurantController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRestaurantRequest $request)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
         // dd($form_data);
         $restaurant = new Restaurant();
         $restaurant->fill($form_data);
