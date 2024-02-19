@@ -3,10 +3,10 @@
 @section('content')
 <div class="container mt-4 text-light">
 
-    <div>
-        <h1>Fai crescere la tua attività online con Deliveboo</h1>
+    <div class="text-center">
+        <h1> <strong>Fai crescere la tua attività online con <span class="text-info">Deliveboo</span></strong></h1>
 
-        <p>Registrati e diventa un partner. Vendi di più, aumenta le tue entrate e gestisci la tua attività online insieme a noi. Il tuo percorso di digitalizzazione inizia qui.</p>
+        <p class="  fs-4 ">Registrati e diventa un partner. Vendi di più, aumenta le tue entrate e gestisci la tua attività online insieme a noi. Il tuo percorso di digitalizzazione inizia qui.</p>
 
        
     </div>
@@ -21,7 +21,7 @@
                         @csrf
 
                         <div class="mb-4 row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right ">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right fs-5 ">{{ __('Name') }}</label>
 
                             <div class="col-md-6 ">
                                 <input id="name" type="text" class="form-control bg-transparent text-light @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -35,10 +35,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right fs-5">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control bg-transparent @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control bg-transparent text-light  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -49,10 +49,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right fs-5">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control bg-transparent @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control bg-transparent text-light  @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -63,10 +63,10 @@
                         </div>
 
                         <div class="mb-4 row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right fs-5 ">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control bg-transparent" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control bg-transparent text-light" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 

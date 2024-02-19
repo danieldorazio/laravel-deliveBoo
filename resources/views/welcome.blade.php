@@ -3,7 +3,7 @@
     <div class="jumbotron p-5 mb-4  rounded-3  ">
         <div class="container py-5 my-text  d-flex flex-column justify-content-end text-center my-dimension">
             <div class="text-uppercase">
-                <h1> <strong>Diventa un partner di Deliveboo</strong> </h1>
+                <h1> <strong>Diventa un partner di <span class="text-info">Deliveboo</span></strong> </h1>
             </div>
 
             <div class="fs-3">
