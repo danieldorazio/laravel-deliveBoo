@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2 class="text-center">Add a new restaurant</h2>
+        <h2 class="text-center">Edit restaurant</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
