@@ -48,11 +48,11 @@
                                 <!-- Authentication Links -->
                                 @guest
                                     <li class="nav-item ">
-                                        <a class=" btn btn-light " href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class=" btn btn-light text-info " href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
                                     @if (Route::has('register'))
                                         <li class="nav-item ps-2">
-                                            <a class=" btn btn-info"
+                                            <a class=" btn btn-info text-light"
                                                 href="{{ route('register') }}">{{ __('Register') }}</a>
                                         </li>
                                     @endif
