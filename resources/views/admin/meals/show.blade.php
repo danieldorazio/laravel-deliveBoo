@@ -12,11 +12,11 @@
         </p>
     </div>
 
-    <div class="mt-4 w-50">
+    {{-- <div class="mt-4 w-50">
         <p>
             <strong>Slug: </strong>{{ $meal->slug}}
         </p>
-    </div>
+    </div> --}}
 
     <div class="mt-4 w-50">
         <p>
