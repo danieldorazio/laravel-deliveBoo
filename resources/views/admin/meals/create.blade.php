@@ -53,13 +53,18 @@
                 </div>
 
                 {{-- Piatto Disponibile --}}
-                <div>
+                {{-- <div>
                     <input class="form-check-input" type="checkbox" value="{{ old('available') }}" id="available"
                         name="available">
                     <label class="form-check-label" for="available">
                         Piatto Disponibile
                     </label>
-                </div>
+                </div> --}}
+
+                <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
+                    <option value="1" selected>Piatto disponibile</option>
+                    <option value="0">Piatto non disponibile</option>
+                </select>
 
                 <button type="submit" class="btn btn-success">Salva</button>
             </form>
