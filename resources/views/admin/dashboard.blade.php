@@ -32,6 +32,7 @@
                     <div class="mt-5">
                         <h3>Menú dei piatti</h3>
                     </div>
+                    Fixare slug dentro form edit e create ristorante
                 </div> --}}
             </div>
         </div>
