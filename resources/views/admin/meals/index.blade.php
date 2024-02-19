@@ -28,7 +28,7 @@
                         <form action="{{ route('admin.meals.destroy', ['meal' => $meal->slug]) }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger delete-btn" type="submit" data-title="{{ $meal->name }}">
+                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="{{ $meal->name }}">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>                    
