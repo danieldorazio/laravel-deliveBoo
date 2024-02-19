@@ -18,12 +18,13 @@
         </p>
     @endif
     </div>
-    
+
+    {{-- Slug
     <div class="mt-4 w-50">
         <p>
             <strong>Slug: </strong>{{ $restaurant->slug}}
         </p>
-    </div>
+    </div> --}}
 
     {{-- P. Iva --}}
     <div class="mt-4 w-50">
