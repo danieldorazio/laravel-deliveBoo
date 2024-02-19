@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2>List of Meals</h2>
+        <h2>Meals List</h2>
 
 
         @if (count($meals) > 0)
@@ -19,13 +19,17 @@
                     <th scope="row">{{$meal->id}}</th>
                     <td>{{$meal->name}}</td>
                     <td>
-                        <a class="btn btn-success" href="{{route('admin.meals.show', ['meal' => $meal->slug]) }}">Details</a>
-                        <a class="btn btn-warning" href="{{route('admin.meals.edit', ['meal' => $meal->slug]) }}">Edit</a>
+                        <a class="btn btn-outline-info px-3 mx-2" href="{{route('admin.meals.show', ['meal' => $meal->slug]) }}">
+                            <i class="fa-solid fa-info"></i>
+                        </a>
+                        <a class="btn btn-outline-warning mx-2" href="{{route('admin.meals.edit', ['meal' => $meal->slug]) }}">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
                         <form action="{{ route('admin.meals.destroy', ['meal' => $meal->slug]) }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger" type="submit" onclick="return confirm('{{ __('Are you sure you want to delete this item?') }}')">
-                                Delete
+                            <button class="btn btn-outline-danger mx-2" type="submit" onclick="return confirm('{{ __('Are you sure you want to delete this item?') }}')">
+                                <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>                    
                     </td>

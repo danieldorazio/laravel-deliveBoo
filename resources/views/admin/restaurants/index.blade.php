@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2>List of Restaurants</h2>
+        <h2>Restaurants List</h2>
 
         @if (count($restaurants) > 0)
         <table class="table table-striped mt-5">
