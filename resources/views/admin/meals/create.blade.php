@@ -18,7 +18,7 @@
                     <input placeholder="name@example.com" type="text"
                         class="form-control @error('name') is-invalid  @enderror" id="name" name="name"
                         value="{{ old('name') }}">
-                    <label for="name">Nome</label>
+                    <label for="name">Name</label>
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -28,13 +28,12 @@
                 <div class="form-floating mb-3">
                     <textarea class="form-control" placeholder="Descrizione piatto" id="description" style="height: 100px"
                         name="description">{{ old('description') }}</textarea>
-                    <label for="description">Descrizione</label>
+                    <label for="description">Description</label>
                 </div>
 
                 {{-- Immagine Piatto --}}
                 <div class="mb-3">
-                    <label for="image" class="form-label @error('image') is-invalid  @enderror">Inserisci
-                        un'immagine</label>
+                    <label for="image" class="form-label @error('image') is-invalid  @enderror">Insert an image</label>
                     <input class="form-control" type="file" id="image" name="image">
                     @error('image')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -53,23 +52,15 @@
                 </div>
 
                 {{-- Piatto Disponibile --}}
-                {{-- <div>
-                    <input class="form-check-input" type="checkbox" value="{{ old('available') }}" id="available"
-                        name="available">
-                    <label class="form-check-label" for="available">
-                        Piatto Disponibile
-                    </label>
-                </div> --}}
-
                 <div class="mb-3">
-                    <label for="available">Disponibilitá</label>
+                    <label for="available">Availability</label>
                     <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
-                        <option value="1" selected>Piatto disponibile</option>
-                        <option value="0">Piatto non disponibile</option>
+                        <option value="1" selected>Meal available</option>
+                        <option value="0">Meal not available</option>
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-success">Salva</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </form>
         </div>
     </div>
