@@ -29,7 +29,7 @@
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-outline-danger delete-btn" type="submit" data-title="{{ $meal->name }}">
-                                Delete
+                                <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>                    
                     </td>
