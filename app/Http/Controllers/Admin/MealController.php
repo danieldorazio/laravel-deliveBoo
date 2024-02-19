@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateMealRequest;
 use App\Models\Meal;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
+use Illuminate\Support\Facades\Storage;
 
 class MealController extends Controller
 {
@@ -43,6 +44,12 @@ class MealController extends Controller
         $form_data = $request->validated();
         $meal = new Meal();
         $meal->fill($form_data);
+
+        if ($request->hasFile('image')) {
+            $path = Storage::put('meal_images', $request->image);
+            $meal->image = $path;
+        }
+
         $meal->save();
 
         return redirect()->route('admin.meals.show', ['meal' => $meal->slug]);
@@ -80,6 +87,15 @@ class MealController extends Controller
     public function update(UpdateMealRequest $request, Meal $meal)
     {
         $form_data = $request->validated();
+
+        if($request->hasFile('image')) {
+            if($meal->image) {
+                Storage::delete($meal->image);
+            }
+
+            $path = Storage::put('meal_images', $request->image);
+            $form_data['image'] = $path;
+        }
 
         $meal->update($form_data);
 
