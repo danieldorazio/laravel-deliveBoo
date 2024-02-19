@@ -54,6 +54,7 @@
             </div>    
 
             <button class="btn btn-outline-success" type="submit">Save</button>
+            <a class="btn btn btn-outline-secondary" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Cancel</a>
 
         </form>
     </div>
