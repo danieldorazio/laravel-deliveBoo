@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMealRequest;
+use App\Http\Requests\UpdateMealRequest;
 use App\Models\Meal;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class MealController extends Controller
 {
@@ -75,13 +77,13 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Meal $meal)
+    public function update(UpdateMealRequest $request, Meal $meal)
     {
         $form_data = $request->validated();
 
         $meal->update($form_data);
 
-        return redirect()->route('admin.meals.show', ['meals' => $meal->slug]);
+        return redirect()->route('admin.meals.show', ['meal' => $meal->slug]);
     }
 
     /**
@@ -90,8 +92,10 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Meal $meal)
     {
-        //
+        $meal->delete();
+
+        return redirect()->route('admin.meals.index')->with('message', "$meal->name has been deleted");
     }
 }
