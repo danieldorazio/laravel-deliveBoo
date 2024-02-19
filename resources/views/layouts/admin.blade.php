@@ -29,8 +29,8 @@
         <header class="navbar navbar-dark sticky-top my-back-main-navbar flex-md-nowrap p-2 shadow">
             <div class="row justify-content-between">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
-                    DeliveBoo
-                    <img src="{{Vite::asset('resources/img/logo.png')}}" alt="">
+                    <img src="{{Vite::asset('resources/img/logo.png')}}" alt="" class="my-logo-dashboard">
+                    <p class="text-light fs-5 d-inline-block">DeliveBoo</p>
                 </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
@@ -61,31 +61,31 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.restaurants.index') }}">
                                     <i class="fa-solid fa-building fa-lg fa-fw "></i> Restaurants
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.meals.index') }}">
                                     <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> Meals
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.orders.index') }}">
                                     <i class="fa-solid fa-folder fa-lg fa-fw"></i> Orders
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.categories.index' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.categories.index' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.categories.index') }}">
                                     <i class="fa-solid fa-list fa-lg fa-fw"></i> Categories
                                 </a>
