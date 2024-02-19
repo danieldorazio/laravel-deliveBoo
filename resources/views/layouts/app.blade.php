@@ -64,10 +64,10 @@
                                             {{ Auth::user()->name }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item text-light"
+                                        <div class="dropdown-menu dropdown-menu-right bg-body bg-opacity-25" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item text-info "
                                                 href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
-                                            <a class="dropdown-item text-light" href="{{ route('logout') }}"
+                                            <a class="dropdown-item text-info" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}

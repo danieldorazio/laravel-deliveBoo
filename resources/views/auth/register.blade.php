@@ -14,7 +14,7 @@
     <div class="row justify-content-center ">
         <div class="col-md-8">
             <div class="card bg-transparent text-light">
-                <div class="card-header bg-light bg-opacity-50 ">{{ __('Register') }}</div>
+                <div class="card-header bg-light bg-opacity-50 fs-5 ">{{ __('Register') }}</div>
 
                 <div class="card-body rounded-pill text-light  ">
                     <form method="POST" action="{{ route('register') }}">
