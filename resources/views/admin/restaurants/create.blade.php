@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container mt-5">
-        <h2 class="text-center">Add a new restaurant</h2>
+    <div class="container my-5">
+        <h2 class="text-center">Add your restaurant</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -34,7 +34,7 @@
 
             {{-- Slug --}}
             <div class="mb-3">
-                <label for="slug" class="form-label">slug</label>
+                <label for="slug" class="form-label">Slug</label>
                 <input type="text" class="form-control" @error('slug') is-invalid  @enderror value="{{ old('slug') }}" id="slug" name="slug">
             </div>
 
@@ -62,7 +62,7 @@
                 <input type="time" class="form-control" id="time_close" name="time_close">
             </div>    
 
-            <button class="btn btn-outline-success" type="submit">Save</button>
+            <button class="btn btn-outline-success my-3" type="submit">Save</button>
 
         </form>
     </div>
