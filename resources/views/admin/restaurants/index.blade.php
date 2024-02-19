@@ -20,6 +20,7 @@
                     <td>{{$restaurant->restaurant_name}}</td>
                     <td>
                         <a class="btn btn-success" href="{{route('admin.restaurants.show', ['restaurant' => $restaurant->slug]) }}">Details</a>
+                        <a class="btn btn-outline-warning" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Edit</a>
                     </td>
                   </tr>
                 @endforeach 
