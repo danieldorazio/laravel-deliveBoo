@@ -26,7 +26,7 @@ class MealController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.meals.create');
     }
 
     /**
@@ -37,7 +37,12 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $meal = new Meal();
+        $meal->fill($form_data);
+        $meal->save();
+
+        return redirect()->route('admin.meals.show', ['meal' => $meal->slug]);
     }
 
     /**
