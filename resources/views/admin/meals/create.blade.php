@@ -43,10 +43,10 @@
 
                 {{-- Prezzo Piatto --}}
                 <div>
-                    <input placeholder="name@example.com" type="text"
+                    <input placeholder="Inserisci il prezzo" type="text"
                         class="form-control @error('price') is-invalid  @enderror" id="price" name="price"
                         value="{{ old('price') }}">
-                    <label for="price">Nome</label>
+                    <label for="price">Price</label>
                     @error('price')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
