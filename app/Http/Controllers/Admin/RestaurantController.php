@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
 {
@@ -39,12 +40,14 @@ class RestaurantController extends Controller
     public function store(StoreRestaurantRequest $request)
     {
         $form_data = $request->validated();
-        // dd($form_data);
         $restaurant = new Restaurant();
         $restaurant->fill($form_data);
-        // dd($restaurant);
-        // $restaurant->slug = Str::slug($restaurant->name, '-');
-        
+
+        if ($request->hasFile('image')) {
+            $path = Storage::put('restaurant_images', $request->image);
+            $restaurant->image = $path;
+        }
+
         $restaurant->save();
 
         return redirect()->route('admin.restaurants.show', ['restaurant' => $restaurant->slug]);
@@ -64,7 +67,7 @@ class RestaurantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $restauramt
+     * @param  int  $restaurant
      * @return \Illuminate\Http\Response
      */
     public function edit(Restaurant $restaurant)
@@ -82,6 +85,16 @@ class RestaurantController extends Controller
     public function update(Request $request, Restaurant $restaurant)
     {
         $form_data = $request->all();
+
+        if($request->hasFile('image')) {
+            if($restaurant->image) {
+                Storage::delete($restaurant->image);
+            }
+
+            $path = Storage::put('restaurant_images', $request->image);
+            $form_data['image'] = $path;
+        }
+
         $restaurant->update($form_data);
 
         return redirect()->route('admin.restaurants.show', ['restaurant' => $restaurant->slug]);

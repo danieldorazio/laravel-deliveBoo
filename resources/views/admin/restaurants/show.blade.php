@@ -10,11 +10,17 @@
     <h2><strong>Name : </strong>{{ $restaurant->restaurant_name}}</h2>
 
     <div class="mt-4 w-50">
+        @if ($restaurant->image)
+        <div>
+            <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+        </div>
+    @else
         <p>
-            <strong>Image : </strong>{{ $restaurant->image ?? 'Not available ' }}
+            <strong>Image : Not available </strong>
         </p>
+    @endif
     </div>
-
+    
     <div class="mt-4 w-50">
         <p>
             <strong>Slug : </strong>{{ $restaurant->slug}}
