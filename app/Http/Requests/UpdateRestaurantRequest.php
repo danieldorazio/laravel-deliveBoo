@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRestaurantRequest extends FormRequest
+class UpdateRestaurantRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class StoreRestaurantRequest extends FormRequest
     public function rules()
     {
         return [
-            'restaurant_name' => 'required|min:6|max:200',
+            'restaurant_name' => 'required|min:3|max:200',
             'image' => 'required',
-            'slug' => 'required',
+            // 'slug' => 'required',
             'piva_user' => 'required|min:11|max:11|unique:restaurants',
             'street' => 'required',
             'time_open' => 'required',
@@ -34,7 +34,8 @@ class StoreRestaurantRequest extends FormRequest
         ];
     }
 
-    public function messages() {
+    public function messages()
+    {
         return [
             'restaurant_name.required' => 'A name is required',
             'restaurant_name.min' => 'The name must be at least :min characters long',

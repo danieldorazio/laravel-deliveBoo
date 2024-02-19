@@ -9,6 +9,8 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    
+
     protected $fillable = ['restaurant_name','slug','image', 'street', 'time_open', 'time_close', 'piva_user'];
 
     protected function setRestaurantNameAttribute($_name) {

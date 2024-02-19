@@ -1,30 +1,29 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container my-5">
         <div class="d-flex align-items-center gap-5 mt-5">
             <h1>Modifica Piatto:</h1>
         </div>
-    </div>
 
-    <div class="row justify-content-center mt-5">
-        <div class="col-6">
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
 
-            <form action="{{ route('admin.meals.update', ['meal' => $meal->slug]) }}" method="POST"
-                enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+                <form action="{{ route('admin.meals.update', ['meal' => $meal->slug]) }}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
-                {{-- Nome Piatto --}}
-                <div class="form-floating mb-3">
-                    <input placeholder="name@example.com" type="text"
-                        class="form-control @error('name') is-invalid  @enderror" id="name" name="name"
-                        value="{{ old('name', $meal->name) }}">
-                    <label for="name">Name</label>
-                    @error('name')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+                    {{-- Nome Piatto --}}
+                    <div class="form-floating mb-3">
+                        <input placeholder="name@example.com" type="text"
+                            class="form-control @error('name') is-invalid  @enderror" id="name" name="name"
+                            value="{{ old('name', $meal->name) }}">
+                        <label for="name">Name</label>
+                        @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
                 {{-- Descrizione Piatto --}}
                 <div class="form-floating mb-3">
@@ -62,9 +61,15 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-success">Salva</button>
-            </form>
+                    {{-- Save btn --}}
+                    <button type="submit" class="btn btn-success">Salva</button>
+                    {{-- Cancel btn --}}
+                    <a class="btn btn btn-outline-primary mx-3"
+                        href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">Discard Changes</a>
+                    {{-- Go Back btn --}}
+                    @include('partials.previous_button')
+                </form>
+            </div>
         </div>
-    </div>
     </div>
 @endsection
