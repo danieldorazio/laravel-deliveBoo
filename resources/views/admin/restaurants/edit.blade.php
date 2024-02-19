@@ -81,8 +81,10 @@
 
             {{-- Save btn --}}
             <button class="btn btn-outline-success" type="submit">Save</button>
-            <a class="btn btn btn-outline-secondary" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Cancel</a>
-
+            {{-- Cancel btn --}}
+            <a class="btn btn btn-outline-primary mx-3" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Discard Changes</a>
+            {{-- Go Back btn --}}
+            @include('partials.previous_button')
         </form>
     </div>
 @endsection

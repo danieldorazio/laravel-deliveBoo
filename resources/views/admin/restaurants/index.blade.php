@@ -27,7 +27,7 @@
                         <form action="{{ route('admin.restaurants.destroy', ['restaurant' => $restaurant->slug]) }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger mx-2" type="submit" onclick="return confirm('{{ __('Are you sure you want to delete this item?') }}')">
+                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="{{ $restaurant->restaurant_name }}">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>
@@ -46,4 +46,5 @@
             <a class="btn btn-outline-secondary" href="{{ route('admin.restaurants.create') }}">Add a new restaurant</a>
         </div>
     </div>
+    @include('partials.delete_modal')
 @endsection

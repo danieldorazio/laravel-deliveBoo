@@ -72,7 +72,7 @@
                     </div>
 
                     {{-- Save btn --}}
-                    <button type="submit" class="btn btn-success">Salva</button>
+                    <button type="submit" class="btn btn-outline-success">Save</button>
                     {{-- Cancel btn --}}
                     <a class="btn btn btn-outline-primary mx-3"
                         href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">Discard Changes</a>
