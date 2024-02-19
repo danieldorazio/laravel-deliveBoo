@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container mt-5">
-        <h2 class="text-center">Edit restaurant</h2>
+    <div class="container my-5">
+        <h2 class="text-center">Edit restaurant informations</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -46,7 +46,7 @@
 
             {{-- Address --}}
             <div class="mb-3">
-                <label for="street" class="form-label">Street</label>
+                <label for="street" class="form-label">Address</label>
                 <input type="text" class="form-control" id="street" name="street" @error('street') is-invalid  @enderror value="{{ old('street', $restaurant->street) }}">
             </div>
 
@@ -62,8 +62,12 @@
                 <input type="time" class="form-control" id="time_close" name="time_close" value="{{ old('time_close', $restaurant->time_close) }}">
             </div>    
 
+            {{-- Save btn --}}
             <button class="btn btn-outline-success" type="submit">Save</button>
-            <a class="btn btn btn-outline-secondary" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Cancel</a>
+            {{-- Cancel btn --}}
+            <a class="btn btn btn-outline-primary mx-3" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Discard Changes</a>
+            {{-- Go back btn --}}
+            @include('partials.previous_button')
 
         </form>
     </div>
