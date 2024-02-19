@@ -24,11 +24,11 @@
     <div id="app">
         <div class="my-bk">
             
-                <nav class="navbar navbar-expand-md navbar-light  shadow-sm ">
+                <nav class="navbar navbar-expand-md navbar-light  ">
                     <div class="container">
                         <a class="navbar-brand d-flex align-items-center text-light" href="{{ url('/') }}">
                             <div class="logo_laravel">
-                                LOGO
+                                <img src="{{Vite::asset('resources/img/logo.png')}}" alt="">
                             </div>
                             {{-- config('app.name', 'Laravel') --}}
                         </a>
@@ -41,14 +41,10 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav me-auto">
-                                <li class="nav-item ">
-                                    <a class="nav-link  " href="{{ url('/') }}">{{ __('Home') }}</a>
-                                </li>
-                            </ul>
+                            
 
                             <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto">
+                            <ul class="navbar-nav ms-auto">
                                 <!-- Authentication Links -->
                                 @guest
                                     <li class="nav-item ">
