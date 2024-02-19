@@ -24,6 +24,7 @@ return new class extends Migration
             $table->decimal('delivery_total_price');
             $table->string('status_delivery');
             $table->char('client_phone',10);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

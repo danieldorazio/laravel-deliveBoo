@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('restaurant_name');
             $table->string('slug');
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->string('street');
             $table->time('time_open');
             $table->time('time_close');
-            $table->char('piva_user');
+            $table->char('piva_user')->unique();
             $table->timestamps();
         });
     }
