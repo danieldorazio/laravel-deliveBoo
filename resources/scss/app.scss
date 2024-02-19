@@ -1,1 +1,24 @@
 @import "~bootstrap/scss/bootstrap";
+
+.my-bk{
+    background-image:url(https://media-assets.vanityfair.it/photos/61b130282e634d794ba25db8/16:9/w_1600%2Cc_limit/Preparazione_piatto_gourmet_Ristoranti_gourmet_del_Trentino_Alto_Adige-desktop.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    
+}
+.my-text{
+    color: white;
+}
+.my-dimension{
+    min-height: 400px;
+}
+
+.my-back-navbarleft{
+    background-color: #27187E;
+}
+
+.my-back-main-navbar{
+    background-color: #75BBFD;
+}
