@@ -55,7 +55,7 @@
                 <div class="mb-3">
                     <label for="available">Availability</label>
                     <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
-                        <option value="1" selected>Meal available</option>
+                        <option value="1">Meal available</option>
                         <option value="0">Meal not available</option>
                     </select>
                 </div>

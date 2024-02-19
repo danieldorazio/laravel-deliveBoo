@@ -13,7 +13,7 @@ class StoreMealRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,7 +27,8 @@ class StoreMealRequest extends FormRequest
             'name' => ['required', 'max:200', 'min:5'],
             'image' => ['nullable'],
             'description' => ['nullable'],
-            'price' => ['required', 'numeric']
+            'price' => ['required', 'numeric'],
+            'available' => ['required', 'numeric']
         ];
     }
 
