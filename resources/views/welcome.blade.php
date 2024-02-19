@@ -11,8 +11,16 @@
             </div>
 
             <div>
-                <a class=" btn btn-info text-light" href="{{ route('register') }}">{{ __('Crea un account') }}</a>
-            </div>         
+                @guest
+
+                    @if (Route::has('register'))
+                        <a class=" btn btn-info text-light" href="{{ route('register') }}">{{ __('Diventa nostro partner') }}</a>
+                    @endif
+                    @else
+                        <h3 class="text-info">Login successfully </h3>
+                    @endguest
+                
+            </div>
         </div>
-    </div>   
-    @endsection
+    </div>
+@endsection
