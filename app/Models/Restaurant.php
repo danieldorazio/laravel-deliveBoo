@@ -18,4 +18,8 @@ class Restaurant extends Model
         $this->attributes['slug'] = Str::slug($_name);
     }
 
+    public function meals() {
+        return $this->hasMany(Meal::class);
+    }
+
 }

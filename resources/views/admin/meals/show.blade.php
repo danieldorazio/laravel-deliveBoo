@@ -6,6 +6,10 @@
 
         <h2><strong>Name: </strong>{{ $meal->name }}</h2>
 
+        <p>
+            Restaurant: {{ $meal->restaurant ? $meal->restaurant->restaurant_name : 'No restaurant chosen' }}
+        </p>
+
         <div class="mt-4 w-50">
             <div class="mt-4 w-50">
                 @if ($meal->image)

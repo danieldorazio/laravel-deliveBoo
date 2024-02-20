@@ -55,6 +55,22 @@
             </p>
         </div>
 
+        {{-- Meals List --}}
+        @if (count($restaurant->meals) > 0)
+        <h3>Restaurant's meals</h3>
+        <ul>
+            @foreach ($restaurant->meals as $meal)
+                <li>
+                    <a href="{{ route('admin.meals.show', ['meal' => $meal->slug]) }}">{{ $meal->name }}</a>
+                </li>
+            @endforeach
+        </ul>
+        @else
+            <p>
+                No meals yet
+            </p>
+        @endif
+
         @include('partials.previous_button')
 
     </div>
