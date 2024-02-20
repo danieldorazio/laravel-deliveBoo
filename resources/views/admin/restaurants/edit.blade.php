@@ -39,18 +39,18 @@
 
             @if ($restaurant->image)
                 <div>
-                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="" class="my-logo-restaurant-and-food">
                 </div>
             @else
                 <p>Nessuna immagine presente</p>
             @endif
             
             {{-- Slug --}}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="slug" class="form-label">slug</label>
                 <input type="text" class="form-control" @error('slug') is-invalid  @enderror id="slug"
                     name="slug" value="{{ old('slug', $restaurant->slug) }}">
-            </div>
+            </div> --}}
 
             {{-- P. Iva --}}
             <div class="mb-3">

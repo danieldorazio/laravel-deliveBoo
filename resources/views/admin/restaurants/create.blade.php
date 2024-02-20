@@ -33,10 +33,10 @@
             </div>
 
             {{-- Slug --}}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="slug" class="form-label">Slug</label>
                 <input type="text" class="form-control" @error('slug') is-invalid  @enderror value="{{ old('slug') }}" id="slug" name="slug">
-            </div>
+            </div> --}}
 
             {{-- P. Iva --}}
             <div class="mb-3">
