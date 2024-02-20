@@ -9,14 +9,14 @@
         <table class="table table-striped mt-5">
             <thead>
               <tr>
-                <th scope="col">Id</th>
+                {{-- <th scope="col">Id</th> --}}
                 <th scope="col">Name</th>
               </tr>
             </thead>
             <tbody>
                 @foreach ($meals as $meal)
                     <tr>
-                    <th scope="row">{{$meal->id}}</th>
+                    {{-- <th scope="row">{{$meal->id}}</th> --}}
                     <td>{{$meal->name}}</td>
                     <td>
                         <a class="btn btn-outline-info px-3 mx-2" href="{{route('admin.meals.show', ['meal' => $meal->slug]) }}">
