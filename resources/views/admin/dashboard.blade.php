@@ -1,3 +1,6 @@
+@php
+   $user = Auth::user()
+@endphp
 @extends('layouts.admin')
 
 @section('content')
@@ -14,10 +17,17 @@
                             </div>
                         @endif
 
-                        <h2>Hi {{Auth::user()->name}}! Welcome!  </h2>
-                        <p>You signed in with the following email: {{Auth::user()->email}}</p>
+                        <h2>Hi {{$user->name}}! Welcome!  </h2>
+                        <p>You signed in with the following email: {{$user->email}}</p>
                     </div>
                 </div>
+
+                @if ($user->restaurant)
+                    <div>
+                        {{$user->restaurant->restaurant_name}}
+                        {{$user->restaurant->street}}
+                    </div>
+                @endif
 
                 {{-- <div>
                         <h2>Todolist</h2>

@@ -18,4 +18,7 @@ class Restaurant extends Model
         $this->attributes['slug'] = Str::slug($_name);
     }
 
-}
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+}   

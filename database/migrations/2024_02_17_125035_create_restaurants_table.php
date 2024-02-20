@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('restaurant_name');
             $table->string('slug');
             $table->text('image')->nullable();
@@ -23,6 +24,8 @@ return new class extends Migration
             $table->time('time_close');
             $table->char('piva_user')->unique();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
         });
     }
 
