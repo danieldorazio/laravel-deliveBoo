@@ -26,7 +26,6 @@ class StoreRestaurantRequest extends FormRequest
         return [
             'restaurant_name' => 'required|min:6|max:200',
             'image' => 'required',
-            'slug' => 'required',
             'piva_user' => 'required|min:11|max:11|unique:restaurants',
             'street' => 'required',
             'time_open' => 'required',
@@ -39,7 +38,6 @@ class StoreRestaurantRequest extends FormRequest
             'restaurant_name.required' => 'A name is required',
             'restaurant_name.min' => 'The name must be at least :min characters long',
             'restaurant_name.max' => 'The name must be no longer than :max characters',
-            // 'slug.required' => 'A slug title is required',
             'piva_user.min' => 'The P. Iva must be at least :min characters long',
             'piva_user.max' => 'The P. Iva must be no longer than :max characters long',
             'street.required' => 'An address is required',
