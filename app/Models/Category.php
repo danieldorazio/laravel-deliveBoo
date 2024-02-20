@@ -18,4 +18,8 @@ class Category extends Model
         $this->attributes['slug'] = Str::slug($_name);
     }
 
+    public function restaurants() {
+        return $this->belongsToMany(Restaurant::class);
+    }
+
 }

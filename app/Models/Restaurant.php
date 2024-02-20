@@ -17,5 +17,8 @@ class Restaurant extends Model
         $this->attributes['restaurant_name'] = $_name;
         $this->attributes['slug'] = Str::slug($_name);
     }
+    public function categories() {
+        return $this->belongsToMany(Category::class);
+    }
 
 }
