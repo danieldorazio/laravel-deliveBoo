@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('meals_orders', function (Blueprint $table) {
+        Schema::create('meal_order', function (Blueprint $table) {
             $table->unsignedBigInteger('meal_id');
             $table->foreign('meal_id')->references('id')->on('meals')->cascadeOnDelete();
 
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->cascadeOnDelete();
-        
+
             $table->primary(['meal_id', 'order_id']);
 
             $table->integer('quantity');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meals_orders');
+        Schema::dropIfExists('meal_order');
     }
 };
