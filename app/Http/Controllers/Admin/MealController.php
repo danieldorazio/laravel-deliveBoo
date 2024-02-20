@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMealRequest;
 use App\Http\Requests\UpdateMealRequest;
 use App\Models\Meal;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 use Illuminate\Support\Facades\Storage;
@@ -30,7 +31,8 @@ class MealController extends Controller
      */
     public function create()
     {
-        return view('admin.meals.create');
+        $restaurants = Restaurant::all();
+        return view('admin.meals.create', compact('restaurants'));
     }
 
     /**
@@ -41,7 +43,7 @@ class MealController extends Controller
      */
     public function store(StoreMealRequest $request)
     {
-        $form_data = $request->validated();
+        $form_data = $request->all();
         $meal = new Meal();
         $meal->fill($form_data);
 
@@ -74,7 +76,8 @@ class MealController extends Controller
      */
     public function edit(Meal $meal)
     {
-        return view('admin.meals.edit', compact('meal'));
+        $restaurants = Restaurant::all();
+        return view('admin.meals.edit', compact('meal', 'restaurants'));
     }
 
     /**
@@ -86,7 +89,7 @@ class MealController extends Controller
      */
     public function update(UpdateMealRequest $request, Meal $meal)
     {
-        $form_data = $request->validated();
+        $form_data = $request->all();
 
         if($request->hasFile('image')) {
             if($meal->image) {

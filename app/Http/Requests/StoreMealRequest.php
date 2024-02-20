@@ -28,7 +28,8 @@ class StoreMealRequest extends FormRequest
             'image' => ['nullable'],
             'description' => ['nullable'],
             'price' => ['required', 'numeric'],
-            'available' => ['required', 'numeric']
+            'available' => ['required', 'numeric'],
+            'restaurant_id' => ['nullable', 'numeric','exists:restaurants,id']
         ];
     }
 
