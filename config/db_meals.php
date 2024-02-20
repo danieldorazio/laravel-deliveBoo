@@ -7,7 +7,6 @@ return [
         "description" => "Un piatto classico cinese con anatra arrosto servita con sottile pancake, salsa di prugne e julienne di cipolla verde.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 3,
     ],
     [
         "id"          => 2,
@@ -16,7 +15,6 @@ return [
         "description" => "Un piatto classico cinese con anatra arrosto servita con sottile pancake, salsa di prugne e julienne di cipolla verde.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 3,
     ],
     [
         "id"          => 3,
@@ -25,7 +23,6 @@ return [
         "description" => "Un piatto classico cinese con anatra arrosto servita con sottile pancake, salsa di prugne e julienne di cipolla verde.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 3,
     ],
     [
         "id"          => 4,
@@ -34,7 +31,6 @@ return [
         "description" => "Un piatto classico cinese con anatra arrosto servita con sottile pancake, salsa di prugne e julienne di cipolla verde.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 3,
     ],
     [
         "id"          => 5,
@@ -43,7 +39,6 @@ return [
         "description" => "Un assortimento di sushi giapponese fresco e prelibato, che include nigiri (topped di pesce su un piccolo blocco di riso) e maki (rotoli di riso avvolti in alga nori).",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 4,
     ],
     [
         "id"          => 6,
@@ -52,7 +47,6 @@ return [
         "description" => "Un assortimento di sushi giapponese fresco e prelibato, che include nigiri (topped di pesce su un piccolo blocco di riso) e maki (rotoli di riso avvolti in alga nori).",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 4,
     ],
     [
         "id"          => 7,
@@ -61,7 +55,6 @@ return [
         "description" => "Un assortimento di sushi giapponese fresco e prelibato, che include nigiri (topped di pesce su un piccolo blocco di riso) e maki (rotoli di riso avvolti in alga nori).",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 4,
     ],
     [
         "id"          => 8,
@@ -70,7 +63,6 @@ return [
         "description" => "Un assortimento di sushi giapponese fresco e prelibato, che include nigiri (topped di pesce su un piccolo blocco di riso) e maki (rotoli di riso avvolti in alga nori).",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 4,
     ],
     [
         "id"          => 9,
@@ -79,7 +71,6 @@ return [
         "description" => "Un hamburger americano classico con un pattino di manzo grigliato, lattuga, pomodoro, cetrioli, cipolla e ketchup, servito su un panino con semi di sesamo.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 8,
     ],
     [
         "id"          => 10,
@@ -88,7 +79,6 @@ return [
         "description" => "Un hamburger americano classico con un pattino di manzo grigliato, lattuga, pomodoro, cetrioli, cipolla e ketchup, servito su un panino con semi di sesamo.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 8,
     ],
     [
         "id"          => 11,
@@ -97,7 +87,6 @@ return [
         "description" => "Un hamburger americano classico con un pattino di manzo grigliato, lattuga, pomodoro, cetrioli, cipolla e ketchup, servito su un panino con semi di sesamo.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 8,
     ],
     [
         "id"          => 12,
@@ -106,7 +95,6 @@ return [
         "description" => "Un hamburger americano classico con un pattino di manzo grigliato, lattuga, pomodoro, cetrioli, cipolla e ketchup, servito su un panino con semi di sesamo.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 8,
     ],
     [
         "id"          => 13,
@@ -115,7 +103,6 @@ return [
         "description" => "Pezzi di pollo marinati in una miscela di yogurt e spezie, quindi cotti in un forno tandoor e serviti in una salsa cremosa di pomodoro e spezie.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 9,
     ],
     [
         "id"          => 14,
@@ -124,7 +111,6 @@ return [
         "description" => "Pezzi di pollo marinati in una miscela di yogurt e spezie, quindi cotti in un forno tandoor e serviti in una salsa cremosa di pomodoro e spezie.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 9,
     ],
     [
         "id"          => 15,
@@ -133,16 +119,14 @@ return [
         "description" => "Pezzi di pollo marinati in una miscela di yogurt e spezie, quindi cotti in un forno tandoor e serviti in una salsa cremosa di pomodoro e spezie.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 9,
     ],
     [
-        "id"          =>16,
+        "id"          => 16,
         "name"        => "Chicken Tikka Masala 4",
         "image"       => "https://www.allrecipes.com/thmb/1ul-jdOz8H4b6BDrRcYOuNmJgt4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/239867chef-johns-chicken-tikka-masala-ddmfs-3X4-0572-e02a25f8c7b745459a9106e9eb13de10.jpg",
         "description" => "Pezzi di pollo marinati in una miscela di yogurt e spezie, quindi cotti in un forno tandoor e serviti in una salsa cremosa di pomodoro e spezie.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 9,
     ],
     [
         "id"          => 17,
@@ -151,7 +135,6 @@ return [
         "description" => "Gli spaghetti alla carbonara sono un piatto tradizionale romano. Gli ingredienti principali includono uova, pancetta, pecorino romano, pepe nero e spaghetti.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 1,
     ],
     [
         "id"          => 18,
@@ -160,7 +143,6 @@ return [
         "description" => "Gli spaghetti alla carbonara sono un piatto tradizionale romano. Gli ingredienti principali includono uova, pancetta, pecorino romano, pepe nero e spaghetti.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 1,
     ],
     [
         "id"          => 19,
@@ -169,7 +151,6 @@ return [
         "description" => "Gli spaghetti alla carbonara sono un piatto tradizionale romano. Gli ingredienti principali includono uova, pancetta, pecorino romano, pepe nero e spaghetti.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 1,
     ],
     [
         "id"          => 20,
@@ -178,7 +159,6 @@ return [
         "description" => "Gli spaghetti alla carbonara sono un piatto tradizionale romano. Gli ingredienti principali includono uova, pancetta, pecorino romano, pepe nero e spaghetti.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 1,
     ],
     [
         "id"          => 21,
@@ -187,7 +167,6 @@ return [
         "description" => "Tortillas di mais ripiene di pollo cotto, avvolte e coperte con salsa di pomodoro e formaggio, quindi cotte al forno fino a doratura.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 7,
     ],
     [
         "id"          => 22,
@@ -196,7 +175,6 @@ return [
         "description" => "Tortillas di mais ripiene di pollo cotto, avvolte e coperte con salsa di pomodoro e formaggio, quindi cotte al forno fino a doratura.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 7,
     ],
     [
         "id"          => 23,
@@ -205,7 +183,6 @@ return [
         "description" => "Tortillas di mais ripiene di pollo cotto, avvolte e coperte con salsa di pomodoro e formaggio, quindi cotte al forno fino a doratura.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 7,
     ],
     [
         "id"          => 24,
@@ -214,7 +191,6 @@ return [
         "description" => "Tortillas di mais ripiene di pollo cotto, avvolte e coperte con salsa di pomodoro e formaggio, quindi cotte al forno fino a doratura.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 7,
     ],
     [
         "id"          => 25,
@@ -223,7 +199,6 @@ return [
         "description" => "Una pizza classica italiana con salsa di pomodoro, mozzarella di bufala, basilico fresco, sale e olio d'oliva.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 2,
     ],
     [
         "id"          => 26,
@@ -232,7 +207,6 @@ return [
         "description" => "Una pizza classica italiana con salsa di pomodoro, mozzarella di bufala, basilico fresco, sale e olio d'oliva.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 2,
     ],
     [
         "id"          => 27,
@@ -241,7 +215,6 @@ return [
         "description" => "Una pizza classica italiana con salsa di pomodoro, mozzarella di bufala, basilico fresco, sale e olio d'oliva.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 2,
     ],
     [
         "id"          => 28,
@@ -250,7 +223,6 @@ return [
         "description" => "Una pizza classica italiana con salsa di pomodoro, mozzarella di bufala, basilico fresco, sale e olio d'oliva.",
         "price"       => 20,
         "available"   => 1,
-        "restaurant_id" => 2,
     ],
     [
         "id" => 29,
@@ -259,7 +231,6 @@ return [
         "description" => "Un piatto tradizionale greco a base di melanzane, carne macinata, besciamella e patate.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 5,
     ],
     [
         "id" => 30,
@@ -268,7 +239,6 @@ return [
         "description" => "Un piatto tradizionale greco a base di melanzane, carne macinata, besciamella e patate.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 5,
     ],
     [
         "id" => 31,
@@ -277,7 +247,6 @@ return [
         "description" => "Un piatto tradizionale greco a base di melanzane, carne macinata, besciamella e patate.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 5,
     ],
     [
         "id" => 32,
@@ -286,7 +255,6 @@ return [
         "description" => "Un piatto tradizionale greco a base di melanzane, carne macinata, besciamella e patate.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 5,
     ],
     [
         "id" => 33,
@@ -295,7 +263,6 @@ return [
         "description" => "Base di riso con salmone, tonno, avocado, cetriolo, edamame e salsa di soia.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 6,
     ],
     [
         "id" => 34,
@@ -304,7 +271,6 @@ return [
         "description" => "Base di riso con salmone, tonno, avocado, cetriolo, edamame e salsa di soia.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 6,
     ],
     [
         "id" => 35,
@@ -313,7 +279,6 @@ return [
         "description" => "Base di riso con salmone, tonno, avocado, cetriolo, edamame e salsa di soia.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 6,
     ],
     [
         "id" => 36,
@@ -322,7 +287,6 @@ return [
         "description" => "Base di riso con salmone, tonno, avocado, cetriolo, edamame e salsa di soia.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 6,
     ],
     [
         "id" => 37,
@@ -331,7 +295,6 @@ return [
         "description" => "Un dolce italiano composto da strati di savoiardi inzuppati nel caffè, alternati a una crema di mascarpone, uova e zucchero, spolverato con cacao in polvere.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 10,
     ],
     [
         "id" => 38,
@@ -340,7 +303,6 @@ return [
         "description" => "Un dolce italiano composto da strati di savoiardi inzuppati nel caffè, alternati a una crema di mascarpone, uova e zucchero, spolverato con cacao in polvere.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 10,
     ],
     [
         "id" => 39,
@@ -349,7 +311,6 @@ return [
         "description" => "Un dolce italiano composto da strati di savoiardi inzuppati nel caffè, alternati a una crema di mascarpone, uova e zucchero, spolverato con cacao in polvere.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 10,
     ],
     [
         "id" => 40,
@@ -358,6 +319,5 @@ return [
         "description" => "Un dolce italiano composto da strati di savoiardi inzuppati nel caffè, alternati a una crema di mascarpone, uova e zucchero, spolverato con cacao in polvere.",
         "price" => 12.00,
         "available" => 1,
-        "restaurant_id" => 10,
     ],
 ];
