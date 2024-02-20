@@ -10,7 +10,7 @@
         <div class="mt-4">
             @if ($restaurant->image)
                 <div>
-                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="" class="w-25">
+                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="" class="my-logo-restaurant-and-food">
                 </div>
             @else
                 <p>
