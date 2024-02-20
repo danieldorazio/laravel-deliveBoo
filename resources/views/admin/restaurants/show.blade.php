@@ -55,6 +55,22 @@
             </p>
         </div>
 
+        <div class="mt-4 w-50">
+            
+            @if (count($restaurant->categories) > 0 )
+            <p><strong> Categories: </strong></p> 
+            <ul>
+                 @foreach ($restaurant->categories as $category )
+                 <li>{{$category->name}}  </li>              
+                @endforeach
+            </ul>
+            
+            @else
+            <p><strong>Categories not indicated </strong> </p>
+            @endif
+            
+        </div>
+
         @include('partials.previous_button')
 
     </div>
