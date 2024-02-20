@@ -20,4 +20,8 @@ class Meal extends Model
         $this->attributes['slug'] = Str::slug($_name);
     }
 
+    public function orders() {
+        return $this->belongsToMany(Order::class);
+    }
+
 }
