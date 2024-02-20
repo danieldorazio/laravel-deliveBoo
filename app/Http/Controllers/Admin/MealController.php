@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateMealRequest;
 use App\Models\Meal;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,7 +21,7 @@ class MealController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
+        $meals = Meal::where('restaurant_id', '=', Auth::user()->id)->get();
         return view('admin.meals.index', compact('meals'));
     }
 
