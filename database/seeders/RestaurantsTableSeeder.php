@@ -3,8 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Restaurant;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
+
 
 class RestaurantsTableSeeder extends Seeder
 {
@@ -13,7 +16,7 @@ class RestaurantsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $restaurant_list = config('db_resturants');
 
