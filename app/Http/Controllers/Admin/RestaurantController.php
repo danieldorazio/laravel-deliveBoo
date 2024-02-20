@@ -7,6 +7,7 @@ use App\Http\Requests\StoreRestaurantRequest;
 use App\Models\Meal;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
@@ -18,8 +19,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
-        return view('admin.restaurants.index', compact('restaurants'));
+        $restaurant = Restaurant::where('user_id', '=' ,Auth::user()->id)->get();
+        return view('admin.restaurants.index', compact('restaurant'));
     }
 
     /**
