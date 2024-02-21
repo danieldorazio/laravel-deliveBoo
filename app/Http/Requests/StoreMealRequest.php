@@ -24,23 +24,26 @@ class StoreMealRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'max:200', 'min:5'],
-            'image' => ['nullable'],
-            'description' => ['nullable'],
-            'price' => ['required', 'numeric'],
-            'available' => ['required', 'numeric'],
-            'restaurant_id' => ['nullable', 'numeric','exists:restaurants,id']
+             'name' => ['required', 'max:200', 'min:5', 'string'],
+             'image' => 'nullable|image',
+             'description' => ['nullable', 'string', 'max:10000'],
+             'price' => ['required', 'decimal:5,2'],
+             'available' => ['required'],
+             'restaurant_id' => ['nullable', 'numeric','exists:restaurants,id']
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'A meal name is needed',
-            'name.max' => 'The maximum number of characters is 200',
-            'name.min' => 'Minimum characters requred 5',
-            'price.required' => 'A pirce is requred',
-            'price.numeric' => 'Price must be a number',
+             'name.required' => 'A meal name is needed',
+             'name.max' => 'The maximum number of characters is 200',
+             'name.min' => 'Minimum characters requred 5',
+             'name.string' => 'The name must be a string',
+             'image.image' => 'Wrong file format',
+             'description.max' => 'The maximum number of characters is 10000',
+             'price.required' => 'A pirce is requred',
+             'price.decimal' => 'Price must be a smaller number',
         ];
     }
 }
