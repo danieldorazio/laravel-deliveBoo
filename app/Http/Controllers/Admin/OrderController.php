@@ -18,16 +18,14 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order_array = [];
-        $user = Auth::user();
-        $meals = Meal::with('orders')->where('restaurant_id', Auth::user()->id)->get();
-        foreach ($meals as $meal) {
-           foreach ( $meal->orders as $order) {
-            array_push($order_array, $order);
-           }
-        }
-
-        return view('admin.orders.index', compact('order_array'));
+        $restaurantId = Auth::user()->restaurant->id;
+        $orders = Order::whereHas('meals', function ($query) use ($restaurantId) {
+            $query->where('restaurant_id', $restaurantId);
+        })->with(['meals' => function ($query) use ($restaurantId) {
+            $query->where('restaurant_id', $restaurantId);
+        }])->get();
+       
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**

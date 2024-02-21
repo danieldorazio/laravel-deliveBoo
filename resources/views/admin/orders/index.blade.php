@@ -22,10 +22,27 @@
         </div>
     @endif --}}
 
-    @foreach ($order_array as $order)
-        {{$order->client_name}}
-
-        {{$order->date}}
-    @endforeach
+    <table class="table table-striped mt-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($orders as $order)
+                <tr>
+                    <th></th>
+                    <td>{{$order->client_name}}</td>
+                    <td>{{$order->payment}}</td>
+                    <td>{{$order->client_email}}</td>
+                    <td>{{$order->delivery_address}}</td>
+                    <td>{{$order->delivery_time}}</td>
+                    <td></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 @endsection
