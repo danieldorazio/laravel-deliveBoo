@@ -71,7 +71,7 @@
                         </select>
                     </div>
 
-                    <div class="mb-2">
+                    {{-- <div class="mb-2">
                         <label for="type">Select a restaurant</label>
                         <select class="form-select" name="restaurant_id" id="restaurant">
                             <option @selected(!old('restaurant_id', $meal->restaurant_id)) value="">None</option>
@@ -79,7 +79,7 @@
                                 <option @selected(old('restaurant_id', $meal->restaurant_id) == $restaurant->id) value="{{ $restaurant->id }}">{{ $restaurant->restaurant_name }}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> --}}
 
                     {{-- Save btn --}}
                     <button type="submit" class="btn btn-outline-success">Save</button>

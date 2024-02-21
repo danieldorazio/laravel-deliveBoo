@@ -39,7 +39,6 @@
                     <td>{{$order->client_email}}</td>
                     <td>{{$order->delivery_address}}</td>
                     <td>{{$order->delivery_time}}</td>
-                    <td></td>
                 </tr>
             @endforeach
         </tbody>
