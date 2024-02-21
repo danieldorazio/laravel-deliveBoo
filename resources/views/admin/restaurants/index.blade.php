@@ -38,11 +38,12 @@
             <div class="alert alert-warning mt-2">
                 <p>No resturants available</p>
             </div>
+
+            <div class="text-end my-5">
+                <a class="btn btn-outline-secondary" href="{{ route('admin.restaurants.create') }}">Add a new restaurant</a>
+            </div>
         @endif
 
-        <div class="text-end my-5">
-            <a class="btn btn-outline-secondary" href="{{ route('admin.restaurants.create') }}">Add a new restaurant</a>
-        </div>
     </div>
     @include('partials.delete_modal')
 @endsection

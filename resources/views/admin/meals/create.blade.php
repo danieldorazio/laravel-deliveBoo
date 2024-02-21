@@ -60,7 +60,7 @@
                     </select>
                 </div>
 
-                {{-- Restaurant --}}
+                {{-- Restaurant
             <div class="mb-3 has-validation">
                 <label for="type">Select a restaurant</label>
                 <select class="form-select @error('restaurant_id') is-invalid @enderror" name="restaurant_id" id="restaurant">
@@ -72,7 +72,7 @@
                 @error('restaurant_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> --}}
 
                 <button type="submit" class="btn btn-success">Save</button>
             </form>
