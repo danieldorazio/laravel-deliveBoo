@@ -87,4 +87,6 @@
             @include('partials.previous_button')
         </form>
     </div>
+
+    {!! JsValidator::formRequest('App\Http\Requests\UpdateRestaurantRequest') !!}
 @endsection

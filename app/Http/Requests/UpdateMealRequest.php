@@ -36,7 +36,7 @@ class UpdateMealRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'A restaurant name is needed',
+            'name.required' => 'A meal name is needed',
             'name.max' => 'The maximum number of characters is 200',
             'name.min' => 'Minimum characters requred 5',
             'price.required' => 'A pirce is requred',

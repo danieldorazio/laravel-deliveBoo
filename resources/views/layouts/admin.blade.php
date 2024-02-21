@@ -18,9 +18,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/img/favicon-16x16.png')}}">
+    <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/favicon-16x16.png') }}">
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
 </head>
 
 <body>
@@ -29,7 +33,7 @@
         <header class="navbar navbar-dark sticky-top my-back-main-navbar flex-md-nowrap p-2 shadow">
             <div class="row justify-content-between">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
-                    <img src="{{Vite::asset('resources/img/logo.png')}}" alt="" class="my-logo-dashboard">
+                    <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="" class="my-logo-dashboard">
                     <p class="text-light fs-5 d-inline-block">DeliveBoo</p>
                 </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
@@ -57,7 +61,8 @@
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi
         aggiungere i link necessari giorno per giorno
         -->
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse" style="background-color: #27187E">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse"
+                    style="background-color: #27187E">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">

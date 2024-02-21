@@ -20,7 +20,8 @@
             {{-- Name --}}
             <div class="mb-3">
                 <label for="restaurant_name" class="form-label">Name</label>
-                <input type="text" class="form-control" @error('restaurant_name') is-invalid  @enderror id="restaurant_name" name="restaurant_name" value="{{ old('restaurant_name') }}">
+                <input type="text" class="form-control" @error('restaurant_name') is-invalid  @enderror
+                    id="restaurant_name" name="restaurant_name" value="{{ old('restaurant_name') }}">
             </div>
 
             {{-- Image --}}
@@ -41,13 +42,15 @@
             {{-- P. Iva --}}
             <div class="mb-3">
                 <label for="piva_user" class="form-label">P. Iva</label>
-                <input type="text" class="form-control" @error('piva_user') is-invalid  @enderror value="{{ old('piva_user') }}" id="piva_user" name="piva_user">
+                <input type="text" class="form-control" @error('piva_user') is-invalid  @enderror
+                    value="{{ old('piva_user') }}" id="piva_user" name="piva_user">
             </div>
 
             {{-- Address --}}
             <div class="mb-3">
                 <label for="street" class="form-label">Street</label>
-                <input type="text" class="form-control" @error('street') is-invalid  @enderror value="{{ old('street') }}" id="street" name="street">
+                <input type="text" class="form-control" @error('street') is-invalid  @enderror
+                    value="{{ old('street') }}" id="street" name="street">
             </div>
 
             {{-- Opening Time --}}
@@ -60,10 +63,15 @@
             <div class="mb-3">
                 <label for="time_close" class="form-label">Closing time</label>
                 <input type="time" class="form-control" id="time_close" name="time_close">
-            </div>    
+            </div>
 
             <button class="btn btn-outline-success my-3" type="submit">Save</button>
 
         </form>
     </div>
+
+
+
+    {{-- JAVASCRIPT VALIDATOR --}}
+    {!! JsValidator::formRequest('App\Http\Requests\StoreRestaurantRequest') !!} 
 @endsection

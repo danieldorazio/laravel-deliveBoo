@@ -92,4 +92,6 @@
             </div>
         </div>
     </div>
+
+    {!! JsValidator::formRequest('App\Http\Requests\UpdateMealRequest') !!}
 @endsection
