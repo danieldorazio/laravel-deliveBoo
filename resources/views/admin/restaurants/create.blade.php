@@ -53,16 +53,15 @@
             {{-- Opening Time --}}
             <div class="mb-3">
                 <label for="time_open" class="form-label">Opening time</label>
-                <input type="time" class="form-control" id="time_open" name="time_open">
+                <input type="time" class="form-control" @error('time_open') is-invalid  @enderror value="{{ old('time_open') }}" id="time_open" name="time_open">
             </div>
 
             {{-- Closing Time --}}
             <div class="mb-3">
                 <label for="time_close" class="form-label">Closing time</label>
-                <input type="time" class="form-control" id="time_close" name="time_close">
+                <input type="time" class="form-control" id="time_close" name="time_close" @error('time_close') is-invalid  @enderror value="{{ old('time_close') }}">
             </div>   
-            
-            Categories
+
             <div class="mb-3">
                 <label for="">Categories</label>
                     @if ($categories)

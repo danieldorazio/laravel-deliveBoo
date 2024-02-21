@@ -30,7 +30,7 @@ class UpdateRestaurantRequest extends FormRequest
             'piva_user' => 'required|min:11|max:11|unique:restaurants',
             'street' => 'required',
             'time_open' => 'required',
-            'time_close' => 'nullable'
+            'time_close' => 'required'
         ];
     }
 
