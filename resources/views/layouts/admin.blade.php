@@ -64,27 +64,29 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard Profile
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.restaurants.index') }}">
-                                    <i class="fa-solid fa-building fa-lg fa-fw "></i> Restaurants
+                                    <i class="fa-solid fa-building fa-lg fa-fw "></i> My Restaurant
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'my-back-link-left' : '' }}"
-                                    href="{{ route('admin.meals.index') }}">
-                                    <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> Meals
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'my-back-link-left' : '' }}"
-                                    href="{{ route('admin.orders.index') }}">
-                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i> Orders
-                                </a>
-                            </li>
+                            @if(Auth::check() && Auth::user()->restaurant)
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'my-back-link-left' : '' }}"
+                                        href="{{ route('admin.meals.index') }}">
+                                        <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> My Menú
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'my-back-link-left' : '' }}"
+                                        href="{{ route('admin.orders.index') }}">
+                                        <i class="fa-solid fa-folder fa-lg fa-fw"></i> My Orders
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
 
 
