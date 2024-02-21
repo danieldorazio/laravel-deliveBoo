@@ -42,7 +42,7 @@
             </p>
         </div>
 
-        @include('partials.previous_button')
+        @include('partials.goback_to_meals_index')
 
     </div>
 @endsection
