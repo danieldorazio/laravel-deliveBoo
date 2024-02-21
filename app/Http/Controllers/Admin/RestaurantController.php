@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
+use App\Models\Category;
+use App\Models\Meal;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class RestaurantController extends Controller
@@ -17,8 +20,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
-        return view('admin.restaurants.index', compact('restaurants'));
+        $restaurant = Restaurant::where('user_id', '=' ,Auth::user()->id)->get();
+        return view('admin.restaurants.index', compact('restaurant'));
     }
 
     /**
@@ -28,7 +31,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $meals = Meal::all();
+        $categories = Category::all();
+        return view('admin.restaurants.create', compact('meals','categories'));
     }
 
     /**
@@ -50,6 +55,10 @@ class RestaurantController extends Controller
 
         $restaurant->save();
 
+        if($request->has('categories')){
+            $restaurant->categories()->attach($request->categories);
+        }
+
         return redirect()->route('admin.restaurants.show', ['restaurant' => $restaurant->slug]);
     }
 
@@ -60,7 +69,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Restaurant $restaurant)
-    {
+    { 
         return view('admin.restaurants.show', compact('restaurant'));
     }
 
@@ -72,7 +81,9 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        return view('admin.restaurants.edit', compact('restaurant'));
+        $meals = Meal::all();
+        $categories = Category::all();
+        return view('admin.restaurants.edit', compact('restaurant', 'meals','categories'));
     }
 
     /**
@@ -94,8 +105,14 @@ class RestaurantController extends Controller
             $path = Storage::put('restaurant_images', $request->image);
             $form_data['image'] = $path;
         }
-
+        
         $restaurant->update($form_data);
+
+        if ($request->has('categories')) {
+            $restaurant->categories()->sync($request->categories);
+        } else {
+            $restaurant->categories()->sync([]);
+        }
 
         return redirect()->route('admin.restaurants.show', ['restaurant' => $restaurant->slug]);
     }

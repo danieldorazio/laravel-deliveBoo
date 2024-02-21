@@ -25,49 +25,69 @@
                         @enderror
                     </div>
 
-                {{-- Descrizione Piatto --}}
-                <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Descrizione piatto" id="description" style="height: 100px"
-                        name="description">{{ old('description', $meal->description)  }}</textarea>
-                    <label for="description">Description</label>
-                </div>
+                    {{-- Descrizione Piatto --}}
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Descrizione piatto" id="description" style="height: 100px"
+                            name="description">{{ old('description', $meal->description) }}</textarea>
+                        <label for="description">Description</label>
+                    </div>
 
-                {{-- Immagine Piatto --}}
-                <div class="mb-3">
-                    <label for="image" class="form-label @error('image') is-invalid  @enderror">Insert an image</label>
-                    <input class="form-control" type="file" id="image" name="image">
-                    @error('image')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+                    {{-- Immagine Piatto --}}
+                    <div class="mb-3">
+                        <label for="image" class="form-label @error('image') is-invalid  @enderror">Insert an
+                            image</label>
+                        <input class="form-control" type="file" id="image" name="image">
+                        @error('image')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
 
-                {{-- Prezzo Piatto --}}
-                <div>
-                    <label for="price">Price</label>
-                    <input placeholder="name@example.com" type="text"
-                        class="form-control @error('price') is-invalid  @enderror" id="price" name="price"
-                        value="{{ old('price', $meal->price)  }}">
-                    @error('price')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+                    @if ($meal->image)
+                        <div>
+                            <img src="{{ asset('storage/' . $meal->image) }}" alt="" class="my-logo-restaurant-and-food">
+                        </div>
+                    @else
+                        <p>Nessuna immagine presente</p>
+                    @endif
 
-                {{-- Piatto Disponibile --}}
-                <div class="mb-3">
-                    <label for="available">Availability</label>
-                    <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
-                        <option @selected(old('available', $meal->available) == '1') value="1">Meal available</option>
-                        <option @selected(old('available', $meal->available) == '0') value="0">Meal not available</option>
-                    </select>
-                </div>
+                    {{-- Prezzo Piatto --}}
+                    <div>
+                        <label for="price">Price</label>
+                        <input placeholder="name@example.com" type="text"
+                            class="form-control @error('price') is-invalid  @enderror" id="price" name="price"
+                            value="{{ old('price', $meal->price) }}">
+                        @error('price')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- Piatto Disponibile --}}
+                    <div class="mb-3">
+                        <label for="available">Availability</label>
+                        <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example"
+                            name="available">
+                            <option @selected(old('available', $meal->available) == '1') value="1">Meal available</option>
+                            <option @selected(old('available', $meal->available) == '0') value="0">Meal not available</option>
+                        </select>
+                    </div>
+
+                    {{-- <div class="mb-2">
+                        <label for="type">Select a restaurant</label>
+                        <select class="form-select" name="restaurant_id" id="restaurant">
+                            <option @selected(!old('restaurant_id', $meal->restaurant_id)) value="">None</option>
+                            @foreach ($restaurants as $restaurant)
+                                <option @selected(old('restaurant_id', $meal->restaurant_id) == $restaurant->id) value="{{ $restaurant->id }}">{{ $restaurant->restaurant_name }}</option>
+                            @endforeach
+                        </select>
+                    </div> --}}
 
                     {{-- Save btn --}}
-                    <button type="submit" class="btn btn-success">Salva</button>
+                    <button type="submit" class="btn btn-outline-success">Save</button>
                     {{-- Cancel btn --}}
                     <a class="btn btn btn-outline-primary mx-3"
                         href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">Discard Changes</a>
                     {{-- Go Back btn --}}
-                    @include('partials.previous_button')
+                    @include('partials.goback_to_meals_index')
                 </form>
             </div>
         </div>

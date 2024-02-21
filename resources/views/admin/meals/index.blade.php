@@ -2,36 +2,43 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2>Meals List</h2>
+        <h2>Menú</h2>
 
 
         @if (count($meals) > 0)
         <table class="table table-striped mt-5">
             <thead>
               <tr>
-                <th scope="col">Id</th>
+                {{-- <th scope="col">Id</th> --}}
                 <th scope="col">Name</th>
+                <th>Details</th>
+                <th>Edit</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
                 @foreach ($meals as $meal)
                     <tr>
-                    <th scope="row">{{$meal->id}}</th>
+                    {{-- <th scope="row">{{$meal->id}}</th> --}}
                     <td>{{$meal->name}}</td>
                     <td>
                         <a class="btn btn-outline-info px-3 mx-2" href="{{route('admin.meals.show', ['meal' => $meal->slug]) }}">
                             <i class="fa-solid fa-info"></i>
-                        </a>
+                        </a>                    
+                    </td>
+                    <td>
                         <a class="btn btn-outline-warning mx-2" href="{{route('admin.meals.edit', ['meal' => $meal->slug]) }}">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
+                    </td>
+                    <td>
                         <form action="{{ route('admin.meals.destroy', ['meal' => $meal->slug]) }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger delete-btn" type="submit" data-title="{{ $meal->name }}">
-                                Delete
+                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="{{ $meal->name }}">
+                                <i class="fa-solid fa-trash"></i>
                             </button>
-                        </form>                    
+                        </form>
                     </td>
                   </tr>
                 @endforeach 

@@ -18,7 +18,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/favicon-16x16.png') }}">
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
@@ -29,8 +29,8 @@
         <header class="navbar navbar-dark sticky-top my-back-main-navbar flex-md-nowrap p-2 shadow">
             <div class="row justify-content-between">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
-                    DeliveBoo
-                    <img src="{{Vite::asset('resources/img/logo.png')}}" alt="">
+                    <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="" class="my-logo-dashboard">
+                    <p class="text-light fs-5 d-inline-block">DeliveBoo</p>
                 </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
@@ -57,39 +57,36 @@
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi
         aggiungere i link necessari giorno per giorno
         -->
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse" style="background-color: #27187E">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse"
+                    style="background-color: #27187E">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard Profile
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.index' ? 'my-back-link-left' : '' }}"
                                     href="{{ route('admin.restaurants.index') }}">
-                                    <i class="fa-solid fa-building fa-lg fa-fw "></i> Restaurants
+                                    <i class="fa-solid fa-building fa-lg fa-fw "></i> My Restaurant
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.meals.index') }}">
-                                    <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> Meals
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.orders.index') }}">
-                                    <i class="fa-solid fa-folder fa-lg fa-fw"></i> Orders
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.categories.index' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.categories.index') }}">
-                                    <i class="fa-solid fa-list fa-lg fa-fw"></i> Categories
-                                </a>
-                            </li>
+                            @if(Auth::check() && Auth::user()->restaurant)
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'my-back-link-left' : '' }}"
+                                        href="{{ route('admin.meals.index') }}">
+                                        <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> My Menú
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'my-back-link-left' : '' }}"
+                                        href="{{ route('admin.orders.index') }}">
+                                        <i class="fa-solid fa-folder fa-lg fa-fw"></i> My Orders
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
 
 

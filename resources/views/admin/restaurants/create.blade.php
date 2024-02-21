@@ -33,10 +33,10 @@
             </div>
 
             {{-- Slug --}}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="slug" class="form-label">Slug</label>
                 <input type="text" class="form-control" @error('slug') is-invalid  @enderror value="{{ old('slug') }}" id="slug" name="slug">
-            </div>
+            </div> --}}
 
             {{-- P. Iva --}}
             <div class="mb-3">
@@ -53,14 +53,31 @@
             {{-- Opening Time --}}
             <div class="mb-3">
                 <label for="time_open" class="form-label">Opening time</label>
-                <input type="time" class="form-control" id="time_open" name="time_open">
+                <input type="time" class="form-control" @error('time_open') is-invalid  @enderror value="{{ old('time_open') }}" id="time_open" name="time_open">
             </div>
 
             {{-- Closing Time --}}
             <div class="mb-3">
                 <label for="time_close" class="form-label">Closing time</label>
-                <input type="time" class="form-control" id="time_close" name="time_close">
-            </div>    
+                <input type="time" class="form-control" id="time_close" name="time_close" @error('time_close') is-invalid  @enderror value="{{ old('time_close') }}">
+            </div>   
+
+            <div class="mb-3">
+                <label for="">Categories</label>
+                    @if ($categories)
+                        @foreach ($categories as $category)
+                        <div class="form-check">
+                            <input @checked(in_array($category->id, old('categories', []))) type="checkbox" name="categories[]" id="category-{{$category->id}}" value="{{ $category->id }}">
+                            <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                        </div>
+                    @endforeach
+                    @error('categories')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                @endif
+            </div>
 
             <button class="btn btn-outline-success my-3" type="submit">Save</button>
 

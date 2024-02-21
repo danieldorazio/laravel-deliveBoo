@@ -60,7 +60,22 @@
                     </select>
                 </div>
 
+                {{-- Restaurant
+            <div class="mb-3 has-validation">
+                <label for="type">Select a restaurant</label>
+                <select class="form-select @error('restaurant_id') is-invalid @enderror" name="restaurant_id" id="restaurant">
+                    <option @selected(!old('restaurant_id')) value="">None</option>
+                    @foreach ($restaurants as $restaurant)
+                        <option @selected(old('restaurant_id') == $restaurant->id) value="{{ $restaurant->id }}">{{ $restaurant->restaurant_name }}</option>
+                    @endforeach
+                </select>   
+                @error('restaurant_id')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div> --}}
+
                 <button type="submit" class="btn btn-success">Save</button>
+                @include('partials.goback_to_meals_index')
             </form>
         </div>
     </div>

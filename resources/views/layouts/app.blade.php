@@ -14,7 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/img/favicon-16x16.png')}}">
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
@@ -58,13 +58,13 @@
                                     @endif
                                 @else
                                     <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#"
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-info fs-5 " href="#"
                                             role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-right bg-body bg-opacity-25" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown-menu dropdown-menu-right bg-body bg-opacity-50" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item text-info "
                                                 href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
                                             <a class="dropdown-item text-info" href="{{ route('logout') }}"

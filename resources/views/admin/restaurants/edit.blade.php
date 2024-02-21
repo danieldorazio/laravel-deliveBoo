@@ -39,18 +39,18 @@
 
             @if ($restaurant->image)
                 <div>
-                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="">
+                    <img src="{{ asset('storage/' . $restaurant->image) }}" alt="" class="my-logo-restaurant-and-food">
                 </div>
             @else
                 <p>Nessuna immagine presente</p>
             @endif
             
             {{-- Slug --}}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="slug" class="form-label">slug</label>
                 <input type="text" class="form-control" @error('slug') is-invalid  @enderror id="slug"
                     name="slug" value="{{ old('slug', $restaurant->slug) }}">
-            </div>
+            </div> --}}
 
             {{-- P. Iva --}}
             <div class="mb-3">
@@ -79,10 +79,22 @@
                     value="{{ old('time_close', $restaurant->time_close) }}">
             </div>
 
+            {{-- Categories --}}
+            <div class="mb-3">
+                <h5>Choose one or more categories:</h5>
+                @foreach ($categories as $category)
+                    <div class="form-check">
+                        <input @checked($restaurant->categories->contains($category)) type="checkbox" name="categories[]" id="category-{{$category->id}}" value="{{ $category->id }}">
+                        <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                    </div>
+                @endforeach
+            </div>
             {{-- Save btn --}}
             <button class="btn btn-outline-success" type="submit">Save</button>
-            <a class="btn btn btn-outline-secondary" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Cancel</a>
-
+            {{-- Cancel btn --}}
+            <a class="btn btn btn-outline-primary mx-3" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Discard Changes</a>
+            {{-- Go Back btn --}}
+            @include('partials.goback_to_restaurants_index')
         </form>
     </div>
 @endsection

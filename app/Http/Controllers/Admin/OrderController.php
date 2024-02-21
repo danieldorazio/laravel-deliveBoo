@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Meal;
 use App\Models\Order;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -15,7 +18,13 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $restaurantId = Auth::user()->restaurant->id;
+        $orders = Order::whereHas('meals', function ($query) use ($restaurantId) {
+            $query->where('restaurant_id', $restaurantId);
+        })->with(['meals' => function ($query) use ($restaurantId) {
+            $query->where('restaurant_id', $restaurantId);
+        }])->get();
+       
         return view('admin.orders.index', compact('orders'));
     }
 
