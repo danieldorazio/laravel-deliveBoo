@@ -75,6 +75,7 @@
             </div> --}}
 
                 <button type="submit" class="btn btn-success">Save</button>
+                @include('partials.goback_to_meals_index')
             </form>
         </div>
     </div>

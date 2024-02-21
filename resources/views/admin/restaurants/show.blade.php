@@ -85,7 +85,7 @@
             </p>
         @endif
 
-        @include('partials.previous_button')
+        @include('partials.goback_to_restaurants_index')
 
     </div>
 @endsection

@@ -94,7 +94,7 @@
             {{-- Cancel btn --}}
             <a class="btn btn btn-outline-primary mx-3" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->slug]) }}">Discard Changes</a>
             {{-- Go Back btn --}}
-            @include('partials.previous_button')
+            @include('partials.goback_to_restaurants_index')
         </form>
     </div>
 @endsection

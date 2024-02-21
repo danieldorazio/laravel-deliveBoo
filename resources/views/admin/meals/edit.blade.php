@@ -87,7 +87,7 @@
                     <a class="btn btn btn-outline-primary mx-3"
                         href="{{ route('admin.meals.edit', ['meal' => $meal->slug]) }}">Discard Changes</a>
                     {{-- Go Back btn --}}
-                    @include('partials.previous_button')
+                    @include('partials.goback_to_meals_index')
                 </form>
             </div>
         </div>
