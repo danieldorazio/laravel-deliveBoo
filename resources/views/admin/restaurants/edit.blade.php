@@ -79,6 +79,16 @@
                     value="{{ old('time_close', $restaurant->time_close) }}">
             </div>
 
+            {{-- Categories --}}
+            <div class="mb-3">
+                <h5>Choose one or more categories:</h5>
+                @foreach ($categories as $category)
+                    <div class="form-check">
+                        <input @checked($restaurant->categories->contains($category)) type="checkbox" name="categories[]" id="category-{{$category->id}}" value="{{ $category->id }}">
+                        <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                    </div>
+                @endforeach
+            </div>
             {{-- Save btn --}}
             <button class="btn btn-outline-success" type="submit">Save</button>
             {{-- Cancel btn --}}

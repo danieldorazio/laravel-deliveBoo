@@ -60,7 +60,23 @@
             <div class="mb-3">
                 <label for="time_close" class="form-label">Closing time</label>
                 <input type="time" class="form-control" id="time_close" name="time_close">
-            </div>    
+            </div>   
+            
+            {{-- Categories --}}
+            <div class="mb-3">
+                <label for="">Categories</label>
+                @foreach ($categories as $category)
+                    <div class="form-check">
+                        <input @checked(in_array($category->id, old('categories', []))) type="checkbox" name="categories[]" id="category-{{$category->id}}" value="{{ $category->id }}">
+                        <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                    </div>
+                @endforeach
+                @error('categories')
+                    <div class="text-danger">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
 
             <button class="btn btn-outline-success my-3" type="submit">Save</button>
 

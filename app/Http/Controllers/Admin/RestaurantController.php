@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
+use App\Models\Category;
 use App\Models\Meal;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
@@ -31,7 +32,8 @@ class RestaurantController extends Controller
     public function create()
     {
         $meals = Meal::all();
-        return view('admin.restaurants.create', compact('meals'));
+        $categories = Category::all();
+        return view('admin.restaurants.create', compact('meals','categories'));
     }
 
     /**
@@ -53,6 +55,10 @@ class RestaurantController extends Controller
 
         $restaurant->save();
 
+        if($request->has('categories')){
+            $restaurant->categories()->attach($request->categories);
+        }
+
         return redirect()->route('admin.restaurants.show', ['restaurant' => $restaurant->slug]);
     }
 
@@ -63,7 +69,7 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Restaurant $restaurant)
-    {
+    { 
         return view('admin.restaurants.show', compact('restaurant'));
     }
 
@@ -76,7 +82,8 @@ class RestaurantController extends Controller
     public function edit(Restaurant $restaurant)
     {
         $meals = Meal::all();
-        return view('admin.restaurants.edit', compact('restaurant', 'meals'));
+        $categories = Category::all();
+        return view('admin.restaurants.edit', compact('restaurant', 'meals','categories'));
     }
 
     /**
@@ -98,8 +105,14 @@ class RestaurantController extends Controller
             $path = Storage::put('restaurant_images', $request->image);
             $form_data['image'] = $path;
         }
-
+        
         $restaurant->update($form_data);
+
+        if ($request->has('categories')) {
+            $restaurant->categories()->sync($request->categories);
+        } else {
+            $restaurant->categories()->sync([]);
+        }
 
         return redirect()->route('admin.restaurants.show', ['restaurant' => $restaurant->slug]);
     }
