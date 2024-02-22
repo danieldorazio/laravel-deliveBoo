@@ -32,7 +32,7 @@
                         <form action="{{ route('profile.destroy') }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="your restaurant? If you do, you will delete your account as well. Do you want to procede">
+                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="your restaurant? If you proceed, your account will also be deleted. Do you wish to continue?">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>

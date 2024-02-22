@@ -58,6 +58,9 @@
                 <p>No deleted meals available</p>
             </div>
         @endif
+        <div>
+            @include('partials.goback_to_meals_index')
+        </div>
     </div>
     @include('partials.delete_modal')
 @endsection

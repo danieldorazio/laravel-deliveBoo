@@ -4,9 +4,9 @@
 <div class="container mt-4 text-light">
 
     <div class="text-center">
-        <h1> <strong>Fai crescere la tua attività online con <span class="text-info">Deliveboo</span></strong></h1>
+        <h1> <strong>Grow your online business with <span class="text-info">Deliveboo</span></strong></h1>
 
-        <p class="  fs-4 ">Registrati e diventa un partner. Vendi di più, aumenta le tue entrate e gestisci la tua attività online insieme a noi. Il tuo percorso di digitalizzazione inizia qui.</p>
+        <p class="  fs-4 ">Sign up and become a partner. Sell more, increase your earnings, and manage your online business with us. Your digitization journey starts here.</p>
 
        
     </div>
@@ -14,7 +14,7 @@
     <div class="row justify-content-center ">
         <div class="col-md-8">
             <div class="card bg-transparent text-light">
-                <div class="card-header bg-light bg-opacity-50 fs-5 ">{{ __('Register') }}</div>
+                <div class="card-header bg-light bg-opacity-50 fs-5 ">{{ __('Sign up') }}</div>
 
                 <div class="card-body rounded-pill text-light  ">
                     <form method="POST" action="{{ route('register') }}">
@@ -73,7 +73,7 @@
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-info">
-                                    {{ __('Register') }}
+                                    {{ __('Sign up') }}
                                 </button>
                             </div>
                         </div>
