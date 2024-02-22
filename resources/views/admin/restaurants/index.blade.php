@@ -29,10 +29,10 @@
                         </a>
                     </td>
                     <td>
-                        <form action="{{ route('admin.restaurants.destroy', ['restaurant' => $restaurant_elem->slug]) }}" class="d-inline-block" method="POST">
+                        <form action="{{ route('profile.destroy') }}" class="d-inline-block" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="{{ $restaurant_elem->restaurant_name }}">
+                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="your restaurant? If you do, you will delete your account as well. Do you want to procede">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="d-flex align-items-center gap-5 mt-5">
-            <h1>Nuovo Piatto:</h1>
+            <h1>Create meal:</h1>
         </div>
     </div>
 
@@ -15,7 +15,7 @@
 
                 {{-- Nome Piatto --}}
                 <div class="form-floating mb-3">
-                    <input placeholder="name@example.com" type="text"
+                    <input placeholder="New meal" type="text"
                         class="form-control @error('name') is-invalid  @enderror" id="name" name="name"
                         value="{{ old('name') }}">
                     <label for="name">Name</label>
@@ -26,7 +26,7 @@
 
                 {{-- Descrizione Piatto --}}
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" placeholder="Descrizione piatto" id="description" style="height: 100px"
+                    <textarea class="form-control" placeholder="Description" id="description" style="height: 100px"
                         name="description">{{ old('description') }}</textarea>
                     <label for="description">Description</label>
                 </div>
@@ -43,7 +43,7 @@
                 {{-- Prezzo Piatto --}}
                 <div class="mb-3">
                     <label for="price">Price</label>
-                    <input placeholder="Inserisci il prezzo" type="text"
+                    <input placeholder="Inserisci il prezzo" type="number"
                         class="form-control @error('price') is-invalid  @enderror" id="price" name="price"
                         value="{{ old('price') }}">
                     @error('price')
@@ -54,25 +54,12 @@
                 {{-- Piatto Disponibile --}}
                 <div class="mb-3">
                     <label for="available">Availability</label>
-                    <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example" name="available">
+                    <select class="form-select form-select-sm" id="available" aria-label=".form-select-sm example"
+                        name="available">
                         <option value="1">Meal available</option>
                         <option value="0">Meal not available</option>
                     </select>
                 </div>
-
-                {{-- Restaurant
-            <div class="mb-3 has-validation">
-                <label for="type">Select a restaurant</label>
-                <select class="form-select @error('restaurant_id') is-invalid @enderror" name="restaurant_id" id="restaurant">
-                    <option @selected(!old('restaurant_id')) value="">None</option>
-                    @foreach ($restaurants as $restaurant)
-                        <option @selected(old('restaurant_id') == $restaurant->id) value="{{ $restaurant->id }}">{{ $restaurant->restaurant_name }}</option>
-                    @endforeach
-                </select>   
-                @error('restaurant_id')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div> --}}
 
                 <button type="submit" class="btn btn-success">Save</button>
                 @include('partials.goback_to_meals_index')
@@ -80,4 +67,6 @@
         </div>
     </div>
     </div>
+
+    {!! JsValidator::formRequest('App\Http\Requests\StoreMealRequest') !!}
 @endsection

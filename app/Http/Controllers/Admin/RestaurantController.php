@@ -21,6 +21,10 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurant = Restaurant::where('user_id', '=' ,Auth::user()->id)->get();
+
+        // user id check
+        // $this->checkUser($restaurant);
+        
         return view('admin.restaurants.index', compact('restaurant'));
     }
 
@@ -70,19 +74,24 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     { 
+        // user id check
+        $this->checkUser($restaurant);
         return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $restaurant
+     * @param  $restaurant
      * @return \Illuminate\Http\Response
      */
     public function edit(Restaurant $restaurant)
     {
         $meals = Meal::all();
         $categories = Category::all();
+
+        // user id check
+        $this->checkUser($restaurant);
         return view('admin.restaurants.edit', compact('restaurant', 'meals','categories'));
     }
 
@@ -95,6 +104,9 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, Restaurant $restaurant)
     {
+        // user id check
+        $this->checkUser($restaurant);
+
         $form_data = $request->all();
 
         if($request->hasFile('image')) {
@@ -125,8 +137,17 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
+        // user id check
+        $this->checkUser($restaurant);
         $restaurant->delete();
 
         return redirect()->route('admin.restaurants.index')->with('message', "$restaurant->restaurant_name deleted succesfully");
+    }
+
+    // user id check
+    private function checkUser(Restaurant $restaurant) {
+        if($restaurant->user_id !== Auth::user()->id) {
+            abort(404);
+        }
     }
 }

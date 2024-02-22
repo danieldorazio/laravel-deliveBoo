@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Restaurant;
+
 
 class ProfileController extends Controller
 {
@@ -42,14 +45,16 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current-password'],
-        ]);
+        // $request->validateWithBag('userDeletion', [
+        //     'password' => ['required', 'current-password'],
+        // ]);
 
         $user = $request->user();
 
         Auth::logout();
 
+        $restaurant = Restaurant::where('id', '=', $user->id)->first();
+        Storage::delete($restaurant->image);    
         $user->delete();
 
         $request->session()->invalidate();

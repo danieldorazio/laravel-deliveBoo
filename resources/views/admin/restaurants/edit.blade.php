@@ -97,4 +97,6 @@
             @include('partials.goback_to_restaurants_index')
         </form>
     </div>
+
+    {!! JsValidator::formRequest('App\Http\Requests\UpdateRestaurantRequest') !!}
 @endsection

@@ -21,6 +21,9 @@ class MealController extends Controller
      */
     public function index()
     {
+        // user id check
+        // $this->checkUser($meal);
+
         $meals = Meal::where('restaurant_id', '=', Auth::user()->id)->get();
         return view('admin.meals.index', compact('meals'));
     }
@@ -44,7 +47,7 @@ class MealController extends Controller
      */
     public function store(StoreMealRequest $request)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
         $meal = new Meal();
         $meal->fill($form_data);
 
@@ -66,6 +69,9 @@ class MealController extends Controller
      */
     public function show(Meal $meal)
     {
+        // user id check
+        $this->checkUser($meal);
+
         return view('admin.meals.show', compact('meal'));
     }
 
@@ -77,6 +83,9 @@ class MealController extends Controller
      */
     public function edit(Meal $meal)
     {
+        // user id check
+        $this->checkUser($meal);
+
         $restaurants = Restaurant::all();
         return view('admin.meals.edit', compact('meal', 'restaurants'));
     }
@@ -90,7 +99,10 @@ class MealController extends Controller
      */
     public function update(UpdateMealRequest $request, Meal $meal)
     {
-        $form_data = $request->all();
+        // user id check
+        $this->checkUser($meal);
+
+        $form_data = $request->validated();
 
         if($request->hasFile('image')) {
             if($meal->image) {
@@ -114,8 +126,54 @@ class MealController extends Controller
      */
     public function destroy(Meal $meal)
     {
+        // user id check
+        $this->checkUser($meal);
+
         $meal->delete();
 
         return redirect()->route('admin.meals.index')->with('message', "$meal->name has been deleted");
+    }
+
+    // user id check
+    private function checkUser(Meal $meal) {
+        $user = Auth::user();
+        if($meal->restaurant_id !== $user->restaurant->id) {
+            abort(404);
+        }
+    }
+
+    public function trash()
+    {
+        $meals = Meal::onlyTrashed()->get();
+
+        return view('admin.meals.trash', compact('meals'));        
+    }
+
+    public function trash_delete($slug)
+    {
+        $meal = Meal::onlyTrashed()->where('slug', $slug)->first();
+        Storage::delete($meal->image);
+        $meal->forceDelete();
+        
+
+        return redirect()->route('admin.meals.trash')->with('message', "$meal->name has been deleted permanently");
+    }
+
+    public function restore($slug)
+    {
+        $meal = Meal::onlyTrashed()->where('slug', $slug)->first();
+        $meal->restore();
+
+        return redirect()->route('admin.meals.index')->with('message', "$meal->name has been restored");
+    }
+
+    public function delete_all() {
+        $meals = Meal::onlyTrashed()->get();
+        foreach ($meals as $meal) { 
+            Storage::delete($meal->image); 
+            $meal->forceDelete();
+        }
+
+        return redirect()->route('admin.meals.trash');
     }
 }
