@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('restaurant_name');
             $table->string('slug');
-            $table->text('image')->nullable();
+            $table->text('image');
             $table->string('street');
             $table->time('time_open');
             $table->time('time_close');
