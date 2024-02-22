@@ -13,82 +13,76 @@
                 </ul>
             </div>
         @endif
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
+                <form class="" action="{{ route('admin.restaurants.store') }}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
 
-        <form class="mt-5" action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+                    {{-- Name --}}
+                    <div class="form-floating mb-3">
+                        <input placeholder="Restaurant name" type="text" class="form-control" id="restaurant_name"
+                            name="restaurant_name" value="{{ old('restaurant_name') }}">
+                        <label for="restaurant_name">Name</label>
+                    </div>
 
-            {{-- Name --}}
-            <div class="mb-3">
-                <label for="restaurant_name" class="form-label">Name</label>
-                <input type="text" class="form-control" @error('restaurant_name') is-invalid  @enderror
-                    id="restaurant_name" name="restaurant_name" value="{{ old('restaurant_name') }}">
+                    {{-- Image --}}
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Add an image</label>
+                        <input class="form-control" type="file" id="image" name="image">
+                    </div>
+
+                    {{-- P. Iva --}}
+                    <div class="form-floating mb-3">
+                        <input placeholder="P. IVA" type="text" class="form-control" id="piva_user" name="piva_user"
+                            value="{{ old('piva_user') }}">
+                        <label for="piva_user">P.IVA</label>
+                    </div>
+
+                    {{-- Address --}}
+                    <div class="form-floating mb-3">
+                        <input placeholder="Street" type="text" class="form-control" id="street" name="street"
+                            value="{{ old('street') }}">
+                        <label for="street">Street</label>
+                    </div>
+
+                    {{-- Opening Time --}}
+                    <div class="mb-3 col-3">
+                        <label for="time_open" class="form-label">Opening time</label>
+                        <input type="time" class="form-control" value="{{ old('time_open') }}" id="time_open"
+                            name="time_open">
+                    </div>
+
+                    {{-- Closing Time --}}
+                    <div class="mb-3 col-3">
+                        <label for="time_close" class="form-label">Closing time</label>
+                        <input type="time" class="form-control" id="time_close" name="time_close"
+                            value="{{ old('time_close') }}">
+                    </div>
+
+                    {{-- Categories --}}
+                    <div class="mb-3">
+                        <label for="">Categories</label>
+                        @if ($categories)
+                            @foreach ($categories as $category)
+                                <div class="form-check">
+                                    <input @checked(in_array($category->id, old('categories', []))) type="checkbox" name="categories[]"
+                                        id="category-{{ $category->id }}" value="{{ $category->id }}">
+                                    <label for="category-{{ $category->id }}">{{ $category->name }}</label>
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+
+                    <button class="btn btn-outline-success my-3" type="submit">Save</button>
+
+                </form>
             </div>
-
-            {{-- Image --}}
-            <div class="mb-3">
-                <label for="image" class="form-label @error('image') is-invalid  @enderror">Add an image</label>
-                <input class="form-control" type="file" id="image" name="image">
-                @error('image')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-
-            {{-- Slug --}}
-            {{-- <div class="mb-3">
-                <label for="slug" class="form-label">Slug</label>
-                <input type="text" class="form-control" @error('slug') is-invalid  @enderror value="{{ old('slug') }}" id="slug" name="slug">
-            </div> --}}
-
-            {{-- P. Iva --}}
-            <div class="mb-3">
-                <label for="piva_user" class="form-label">P. Iva</label>
-                <input type="text" class="form-control" @error('piva_user') is-invalid  @enderror
-                    value="{{ old('piva_user') }}" id="piva_user" name="piva_user">
-            </div>
-
-            {{-- Address --}}
-            <div class="mb-3">
-                <label for="street" class="form-label">Street</label>
-                <input type="text" class="form-control" @error('street') is-invalid  @enderror
-                    value="{{ old('street') }}" id="street" name="street">
-            </div>
-
-            {{-- Opening Time --}}
-            <div class="mb-3">
-                <label for="time_open" class="form-label">Opening time</label>
-                <input type="time" class="form-control" @error('time_open') is-invalid  @enderror value="{{ old('time_open') }}" id="time_open" name="time_open">
-            </div>
-
-            {{-- Closing Time --}}
-            <div class="mb-3">
-                <label for="time_close" class="form-label">Closing time</label>
-                <input type="time" class="form-control" id="time_close" name="time_close" @error('time_close') is-invalid  @enderror value="{{ old('time_close') }}">
-            </div>   
-
-            <div class="mb-3">
-                <label for="">Categories</label>
-                    @if ($categories)
-                        @foreach ($categories as $category)
-                        <div class="form-check">
-                            <input @checked(in_array($category->id, old('categories', []))) type="checkbox" name="categories[]" id="category-{{$category->id}}" value="{{ $category->id }}">
-                            <label for="category-{{ $category->id }}">{{ $category->name }}</label>
-                        </div>
-                    @endforeach
-                    @error('categories')
-                        <div class="text-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                @endif
-            </div>
-
-            <button class="btn btn-outline-success my-3" type="submit">Save</button>
-
-        </form>
+        </div>
     </div>
 
 
 
     {{-- JAVASCRIPT VALIDATOR --}}
-    {!! JsValidator::formRequest('App\Http\Requests\StoreRestaurantRequest') !!} 
+    {!! JsValidator::formRequest('App\Http\Requests\StoreRestaurantRequest') !!}
 @endsection
