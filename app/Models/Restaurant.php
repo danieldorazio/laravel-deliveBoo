@@ -17,8 +17,8 @@ class Restaurant extends Model
     protected function setRestaurantNameAttribute($_name) {
         $this->attributes['restaurant_name'] = $_name;
         $this->attributes['slug'] = Str::slug($_name);
-        $_id = Auth::user()->id;
-        $this->attributes['user_id'] = $_id;
+        // $_id = Auth::user()->id;
+        // $this->attributes['user_id'] = $_id;
     }
 
     public function categories() {
