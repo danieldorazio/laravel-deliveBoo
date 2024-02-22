@@ -24,6 +24,7 @@ class RestaurantController extends Controller
 
         // user id check
         // $this->checkUser($restaurant);
+        
         return view('admin.restaurants.index', compact('restaurant'));
     }
 
@@ -136,6 +137,7 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
+        // user id check
         $this->checkUser($restaurant);
         $restaurant->delete();
 
