@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Restaurant;
+
 
 class ProfileController extends Controller
 {
@@ -50,6 +53,8 @@ class ProfileController extends Controller
 
         Auth::logout();
 
+        $restaurant = Restaurant::where('id', '=', $user->id)->first();
+        Storage::delete($restaurant->image);    
         $user->delete();
 
         $request->session()->invalidate();

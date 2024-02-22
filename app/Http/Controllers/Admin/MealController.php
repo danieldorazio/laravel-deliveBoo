@@ -141,4 +141,39 @@ class MealController extends Controller
             abort(404);
         }
     }
+
+    public function trash()
+    {
+        $meals = Meal::onlyTrashed()->get();
+
+        return view('admin.meals.trash', compact('meals'));        
+    }
+
+    public function trash_delete($slug)
+    {
+        $meal = Meal::onlyTrashed()->where('slug', $slug)->first();
+        Storage::delete($meal->image);
+        $meal->forceDelete();
+        
+
+        return redirect()->route('admin.meals.trash')->with('message', "$meal->name has been deleted permanently");
+    }
+
+    public function restore($slug)
+    {
+        $meal = Meal::onlyTrashed()->where('slug', $slug)->first();
+        $meal->restore();
+
+        return redirect()->route('admin.meals.index')->with('message', "$meal->name has been restored");
+    }
+
+    public function delete_all() {
+        $meals = Meal::onlyTrashed()->get();
+        foreach ($meals as $meal) { 
+            Storage::delete($meal->image); 
+            $meal->forceDelete();
+        }
+
+        return redirect()->route('admin.meals.trash');
+    }
 }

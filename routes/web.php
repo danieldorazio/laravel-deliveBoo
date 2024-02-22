@@ -46,6 +46,12 @@ Route::middleware(['auth','verified'])
         Route::resource('meals', MealController::class)->parameters(['meals' => 'meal:slug']);
         Route::resource('orders', OrderController::class)->parameters(['orders' => 'order:id']);
         Route::resource('categories', CategoryController::class)->parameters(['categories' => 'category:slug']);
+
+         // Rotte soft delete meals
+         Route::get('trash/meals', [MealController::class, 'trash'])->name('meals.trash');
+         Route::delete('trash/{meal}', [MealController::class, 'trash_delete'])->name('meals.trash.delete');
+         Route::patch('trash/{meal}/restore', [MealController::class, 'restore'])->name('meals.trash.restore');
+         Route::delete('/deleteall', [MealController::class, 'delete_all'])->name('meals.trash.deleteall');
     });
 
 require __DIR__.'/auth.php';
