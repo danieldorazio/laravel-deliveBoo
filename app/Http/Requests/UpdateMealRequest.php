@@ -29,7 +29,6 @@ class UpdateMealRequest extends FormRequest
             'description' => ['nullable', 'string', 'max:10000'],
             'price' => ['required', 'numeric', 'max:999.99'],
             'available' => ['required'],
-            'restaurant_id' => ['nullable', 'numeric','exists:restaurants,id']
         ];
     }
 
@@ -45,6 +44,7 @@ class UpdateMealRequest extends FormRequest
             'price.required' => 'A pirce is requred',
             'price.numeric' => 'Price must be a number',
             'price.max' => 'Price must be a smaller number',
+            'available.required' => 'Availability is required',
         ];
     }
 }
