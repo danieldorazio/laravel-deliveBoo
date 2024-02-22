@@ -26,8 +26,9 @@ class UpdateRestaurantRequest extends FormRequest
     {
         return [
             'restaurant_name' => 'required|string|min:6|max:200',
-            'image' => 'required|image',
-            'piva_user' => ['required', 'min:11', 'max:11', 'unique:restaurants', Rule::unique('restaurants')->ignore($this->restaurant)],
+            'image' => 'image',
+             'piva_user' => ['required', 'min:11', 'max:11'],
+            // Rule::unique('restaurants')->ignore($this->restaurant)
             'street' => 'required|min:5|max:200',
             'time_open' => 'required',
             'time_close' => 'required'

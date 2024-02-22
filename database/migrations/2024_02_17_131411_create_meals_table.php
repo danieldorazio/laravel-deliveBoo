@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('image')->nullable();
             $table->text('description')->nullable();
-            $table->decimal('price', 5, 2);;
+            $table->decimal('price', 5, 2);
             $table->tinyInteger('available');
             $table->softDeletes();
             $table->timestamps();

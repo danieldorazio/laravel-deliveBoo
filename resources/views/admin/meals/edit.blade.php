@@ -3,7 +3,7 @@
 @section('content')
     <div class="container my-5">
         <div class="d-flex align-items-center gap-5 mt-5">
-            <h1>Modifica Piatto:</h1>
+            <h1>Edit meal:</h1>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -16,7 +16,7 @@
 
                     {{-- Nome Piatto --}}
                     <div class="form-floating mb-3">
-                        <input placeholder="name@example.com" type="text"
+                        <input placeholder="New meal" type="text"
                             class="form-control @error('name') is-invalid  @enderror" id="name" name="name"
                             value="{{ old('name', $meal->name) }}">
                         <label for="name">Name</label>
@@ -27,7 +27,7 @@
 
                     {{-- Descrizione Piatto --}}
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Descrizione piatto" id="description" style="height: 100px"
+                        <textarea class="form-control" placeholder="Description" id="description" style="height: 100px"
                             name="description">{{ old('description', $meal->description) }}</textarea>
                         <label for="description">Description</label>
                     </div>
@@ -47,13 +47,13 @@
                             <img src="{{ asset('storage/' . $meal->image) }}" alt="" class="my-logo-restaurant-and-food">
                         </div>
                     @else
-                        <p>Nessuna immagine presente</p>
+                        <p>No image available</p>
                     @endif
 
                     {{-- Prezzo Piatto --}}
                     <div>
                         <label for="price">Price</label>
-                        <input placeholder="name@example.com" type="text"
+                        <input placeholder="Insert price" type="number"
                             class="form-control @error('price') is-invalid  @enderror" id="price" name="price"
                             value="{{ old('price', $meal->price) }}">
                         @error('price')
@@ -70,16 +70,6 @@
                             <option @selected(old('available', $meal->available) == '0') value="0">Meal not available</option>
                         </select>
                     </div>
-
-                    {{-- <div class="mb-2">
-                        <label for="type">Select a restaurant</label>
-                        <select class="form-select" name="restaurant_id" id="restaurant">
-                            <option @selected(!old('restaurant_id', $meal->restaurant_id)) value="">None</option>
-                            @foreach ($restaurants as $restaurant)
-                                <option @selected(old('restaurant_id', $meal->restaurant_id) == $restaurant->id) value="{{ $restaurant->id }}">{{ $restaurant->restaurant_name }}</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
 
                     {{-- Save btn --}}
                     <button type="submit" class="btn btn-outline-success">Save</button>
