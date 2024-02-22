@@ -21,8 +21,7 @@ return new class extends Migration
             $table->string('client_name');
             $table->string('delivery_address');
             $table->dateTime('delivery_time');
-            $table->decimal('delivery_total_price');
-            $table->string('status_delivery');
+            // $table->decimal('delivery_total_price')->nullable();
             $table->char('client_phone',10);
             $table->softDeletes();
             $table->timestamps();

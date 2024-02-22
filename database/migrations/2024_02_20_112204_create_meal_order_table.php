@@ -23,6 +23,7 @@ return new class extends Migration
             $table->primary(['meal_id', 'order_id']);
 
             $table->integer('quantity');
+            $table->timestamps();
         });
     }
 

@@ -29,7 +29,6 @@ class StoreMealRequest extends FormRequest
              'description' => ['nullable', 'string', 'max:10000'],
              'price' => ['required', 'numeric', 'max:999.99'],
              'available' => ['required'],
-             'restaurant_id' => ['nullable', 'numeric','exists:restaurants,id']
         ];
     }
 
@@ -38,13 +37,14 @@ class StoreMealRequest extends FormRequest
         return [
              'name.required' => 'A meal name is needed',
              'name.max' => 'The maximum number of characters is 200',
-             'name.min' => 'Minimum characters requred 5',
+             'name.min' => 'Minimum characters requred: 5',
              'name.string' => 'The name must be a string',
              'image.image' => 'Wrong file format',
              'description.max' => 'The maximum number of characters is 10000',
              'price.required' => 'A price is requred',
              'price.numeric' => 'Price must be a number',
              'price.max' => 'Price must be a smaller number',
+             'available.required' => 'Availability is required',
         ];
     }
 }
