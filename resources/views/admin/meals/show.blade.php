@@ -6,8 +6,8 @@
 
         <h2><strong>Name: </strong>{{ $meal->name }}</h2>
 
-        <p>
-            Restaurant: {{ $meal->restaurant ? $meal->restaurant->restaurant_name : 'No restaurant chosen' }}
+        <p class="mt-3">
+            Restaurant: <strong>{{ $meal->restaurant ? $meal->restaurant->restaurant_name : 'No restaurant chosen' }}</strong>  
         </p>
 
         <div class="mt-4 w-50">
@@ -18,7 +18,7 @@
                     </div>
                 @else
                     <p>
-                        <strong>Image : Not available </strong>
+                        <strong>Image: Not available </strong>
                     </p>
                 @endif
             </div>

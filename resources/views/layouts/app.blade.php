@@ -53,7 +53,7 @@
                                     @if (Route::has('register'))
                                         <li class="nav-item ps-2">
                                             <a class=" btn btn-info text-light"
-                                                href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                href="{{ route('register') }}">{{ __('Sign up') }}</a>
                                         </li>
                                     @endif
                                 @else

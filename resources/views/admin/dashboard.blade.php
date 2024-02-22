@@ -1,5 +1,5 @@
 @php
-   $user = Auth::user()
+    $user = Auth::user();
 @endphp
 @extends('layouts.admin')
 
@@ -17,17 +17,20 @@
                             </div>
                         @endif
 
-                        <h2>Hi {{$user->name}}! Welcome!  </h2>
-                        <p>You signed in with the following email: {{$user->email}}</p>
+                        <h2>Hi {{ $user->name }}! Welcome!</h2>
+                        <p>You signed in with the following email: <strong>{{ $user->email }}</strong></p>
                     </div>
                 </div>
 
+
                 @if ($user->restaurant)
-                    <div>
-                        {{$user->restaurant->restaurant_name}}
-                        {{$user->restaurant->street}}
+                    <div class="my-5 text-center">
+                        <p>Your restaurant: <strong>{{ $user->restaurant->restaurant_name }}</strong></p>
+                        <p>Your restaurant address: <strong>{{ $user->restaurant->street }}</strong></p>
+                        <img src="" alt="restaurant logo">
                     </div>
                 @endif
+
 
                 {{-- <div>
                         <h2>Todolist</h2>

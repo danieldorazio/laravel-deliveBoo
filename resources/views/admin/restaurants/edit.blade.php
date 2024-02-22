@@ -42,7 +42,7 @@
                     <img src="{{ asset('storage/' . $restaurant->image) }}" alt="" class="my-logo-restaurant-and-food">
                 </div>
             @else
-                <p>Nessuna immagine presente</p>
+                <p>No image found</p>
             @endif
             
             {{-- Slug --}}
@@ -53,7 +53,7 @@
             </div> --}}
 
             {{-- P. Iva --}}
-            <div class="mb-3">
+            <div class="my-3">
                 <label for="piva_user" class="form-label">P. Iva</label>
                 <input type="text" class="form-control" id="piva_user" name="piva_user"
                     value="{{ old('piva_user', $restaurant->piva_user) }}" @error('piva_user') is-invalid  @enderror>

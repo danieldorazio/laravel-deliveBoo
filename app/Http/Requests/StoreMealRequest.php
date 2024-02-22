@@ -38,7 +38,7 @@ class StoreMealRequest extends FormRequest
         return [
              'name.required' => 'A meal name is needed',
              'name.max' => 'The maximum number of characters is 200',
-             'name.min' => 'Minimum characters requred 5',
+             'name.min' => 'Minimum characters requred: 5',
              'name.string' => 'The name must be a string',
              'image.image' => 'Wrong file format',
              'description.max' => 'The maximum number of characters is 10000',
