@@ -19,8 +19,8 @@ class Meal extends Model
     protected function setNameAttribute($_name) {
         $this->attributes['name'] = $_name;
         $this->attributes['slug'] = Str::slug($_name);
-        $_id = Auth::user()->id;
-        $this->attributes['restaurant_id'] = $_id ;
+        // $_id = Auth::user()->id;
+        // $this->attributes['restaurant_id'] = $_id ;
     }
 
     public function restaurant() {
