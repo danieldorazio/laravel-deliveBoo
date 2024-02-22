@@ -48,4 +48,11 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+    // public function destroy (User $user) {
+    //     $user->delete();
+
+    //     return redirect()->route('welcome')->with('message', "$user->user_name account deleted succesfully");
+    // }
 }
+
