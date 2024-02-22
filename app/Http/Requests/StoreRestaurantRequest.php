@@ -33,7 +33,8 @@ class StoreRestaurantRequest extends FormRequest
         ];
     }
 
-    public function messages() {
+    public function messages()
+    {
         return [
             'restaurant_name.required' => 'A name is required',
             'required_name.string' => 'The name must be a string',
