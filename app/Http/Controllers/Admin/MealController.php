@@ -44,7 +44,7 @@ class MealController extends Controller
      */
     public function store(StoreMealRequest $request)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
         $meal = new Meal();
         $meal->fill($form_data);
 
@@ -90,7 +90,7 @@ class MealController extends Controller
      */
     public function update(UpdateMealRequest $request, Meal $meal)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
 
         if($request->hasFile('image')) {
             if($meal->image) {
