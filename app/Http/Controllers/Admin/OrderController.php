@@ -59,29 +59,28 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         $meals = $order->meals;
-            // dd($meals)  ;     
-            
+
         $total_price = 0;
 
-        foreach ($meals as $meal) {
-            $total_price = $total_price + $meal->price;
-        }
-        // dd($total_price);
-
-        $pivot = DB::table('orders')->join('meal_order', function($join){
+        $pivot = DB::table('orders')->join('meal_order', function ($join) {
             $join->on('orders.id', '=', 'meal_order.order_id')->orderBy('orders.id');
         })->get();
-        
-          $array = [];
-          foreach ($pivot as $pivot_item) {
-            
+
+        $array = [];
+        foreach ($pivot as $pivot_item) {
+
             if ($pivot_item->order_id === $order->id) {
                 array_push($array, $pivot_item);
             }
-          }
-    
-     
-        
+        }
+
+        foreach ($meals as $meal) {
+            foreach ($array as $value) {
+                if ($meal->id === $value->meal_id) {
+                    $total_price = $total_price + ($meal->price * $value->quantity);
+                }
+            }
+        }
 
         return view('admin.orders.show', compact('order', 'meals', 'array', 'total_price'));
     }
