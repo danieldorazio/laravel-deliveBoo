@@ -144,7 +144,8 @@ class MealController extends Controller
 
     public function trash()
     {
-        $meals = Meal::onlyTrashed()->get();
+        $user = Auth::user()->id;        
+        $meals = Meal::onlyTrashed()->where('restaurant_id','=', $user)->get();
 
         return view('admin.meals.trash', compact('meals'));        
     }

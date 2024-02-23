@@ -85,6 +85,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.trash' ? 'my-back-link-left' : '' }}"
+                                        href="{{ route('admin.meals.trash') }}">
+                                        <i class="fa-solid fa-trash-can fa-lg fa-fw"></i> Deleted meals
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'my-back-link-left' : '' }}"
                                         href="{{ route('admin.orders.index') }}">
                                         <i class="fa-solid fa-folder fa-lg fa-fw"></i> My Orders

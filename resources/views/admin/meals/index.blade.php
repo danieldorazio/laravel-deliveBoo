@@ -52,7 +52,6 @@
 
         <div class="text-end my-5">
             <a class="btn btn-outline-secondary" href="{{ route('admin.meals.create') }}">Add a new meal</a>
-            <a class="btn btn-outline-secondary" href="{{ route('admin.meals.trash') }}">Deleted meals</a>
         </div>
     </div>
     @include('partials.delete_modal')
