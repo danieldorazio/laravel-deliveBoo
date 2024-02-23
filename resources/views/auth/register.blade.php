@@ -13,7 +13,7 @@
 
     <div class="row justify-content-center ">
         <div class="col-md-8">
-            <div class="card bg-transparent text-light">
+            <div class="card bg-dark bg-opacity-50 text-light">
                 <div class="card-header bg-light bg-opacity-50 fs-5 ">{{ __('Sign up') }}</div>
 
                 <div class="card-body rounded-pill text-light  ">
@@ -84,4 +84,7 @@
     </div>
      
 </div>
+
+
+{!! JsValidator::formRequest('App\Http\Requests\Auth\RegisterRequest') !!}
 @endsection

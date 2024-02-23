@@ -17,6 +17,11 @@
     <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/img/favicon-16x16.png')}}">
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
 </head>
 
 <body class="">

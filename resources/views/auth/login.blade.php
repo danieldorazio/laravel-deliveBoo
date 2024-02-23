@@ -7,7 +7,7 @@
             <div class="card bg-transparent text-light">
                 <div class="card-header fs-5 bg-light bg-opacity-50 ">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body bg-dark bg-opacity-50">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -70,4 +70,6 @@
         </div>
     </div>
 </div>
+
+{!! JsValidator::formRequest('App\Http\Requests\Auth\LoginRequest') !!}
 @endsection
