@@ -19,6 +19,7 @@ class OrderController extends Controller
      */
     public function index()
     {
+
         $restaurantId = Auth::user()->restaurant->id;
         $orders = Order::whereHas('meals', function ($query) use ($restaurantId) {
             $query->where('restaurant_id', $restaurantId);
@@ -58,6 +59,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
+        $this->checkUser($order);
+
         $meals = $order->meals;
 
         $total_price = 0;
@@ -117,5 +120,18 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // user id check
+    private function checkUser(Order $order)
+    {
+
+        $meals = $order->meals;
+
+        foreach ($meals as $meal) {
+            if ($meal->restaurant_id !== Auth::user()->id) {
+                abort(404);
+            }
+        }
     }
 }
