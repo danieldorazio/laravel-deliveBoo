@@ -28,8 +28,20 @@
                         <p>Your restaurant: <strong>{{ $user->restaurant->restaurant_name }}</strong></p>
                         <p>Your restaurant address: <strong>{{ $user->restaurant->street }}</strong></p>
                         <img src="" alt="restaurant logo">
+                        <div class="mt-3">
+                            Delete Your Account: 
+                            <form action="{{ route('profile.destroy') }}" class="d-inline-block" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="your restaurant? If you proceed, your account will also be deleted. Do you wish to continue?">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
+
                 @endif
+
 
 
                 {{-- <div>
@@ -50,4 +62,5 @@
             </div>
         </div>
     </div>
+    @include('partials.delete_modal')
 @endsection
