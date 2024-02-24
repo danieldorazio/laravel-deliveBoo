@@ -312,4 +312,12 @@ return [
         "price" => 12.00,
         "available" => 1,
     ],
+    [
+        "id" => 40,
+	    "restaurant_id" => 10,
+        "name" => "Tiramisù 4",
+        "description" => "Un dolce italiano composto da strati di savoiardi inzuppati nel caffè, alternati a una crema di mascarpone, uova e zucchero, spolverato con cacao in polvere.",
+        "price" => 12.00,
+        "available" => 1,
+    ],
 ];
