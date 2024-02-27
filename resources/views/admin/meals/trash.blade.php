@@ -19,7 +19,7 @@
                     <tr>
                         {{-- <th scope="col">Id</th> --}}
                         <th scope="col">Name</th>
-                        <th>Details</th>
+                        <th>Restore</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
