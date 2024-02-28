@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/restaurants/{category}', [RestaurantController::class, 'index']);
+Route::get('/restaurants', [RestaurantController::class, 'index']);
 Route::get('/restaurant/show/{id}', [RestaurantController::class, 'show']);
 Route::get('/meals/{id}', [MealController::class, 'index']);
