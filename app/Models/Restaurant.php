@@ -18,10 +18,11 @@ class Restaurant extends Model
     protected function setRestaurantNameAttribute($_name)
     {
         $this->attributes['restaurant_name'] = $_name;
-        $this->attributes['slug'] = Str::slug($_name);
+        $this->attributes['slug'] = Str::slug($_name);  
         if (Auth::check()) {
             $_id = Auth::user()->id;
             $this->attributes['user_id'] = $_id;
+            $this->attributes['slug'] = $this->attributes['slug'] . strval($_id);
         }
     }
 
