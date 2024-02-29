@@ -31,9 +31,9 @@
             
                 <nav class="navbar navbar-expand-md navbar-light  ">
                     <div class="container">
-                        <a class="navbar-brand d-flex align-items-center text-light" href="{{ url('/') }}">
-                            <div class="logo_laravel">
-                                <img src="{{Vite::asset('resources/img/logo.png')}}" alt="">
+                        <a class="navbar-brand d-flex align-items-center text-light" href="{{ url('http://localhost:5173/')}}">
+                            <div class="btn">
+                                <img src="{{Vite::asset('resources/img/logo2.jpg')}}" alt="" class="img-vue rounded-pill">
                             </div>
                             {{-- config('app.name', 'Laravel') --}}
                         </a>

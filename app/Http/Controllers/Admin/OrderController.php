@@ -25,7 +25,7 @@ class OrderController extends Controller
             $query->where('restaurant_id', $restaurantId);
         })->with(['meals' => function ($query) use ($restaurantId) {
             $query->where('restaurant_id', $restaurantId);
-        }])->orderByDesc('date')->get();
+        }])->orderByDesc('delivery_time')->get();
 
         return view('admin.orders.index', compact('orders'));
     }
