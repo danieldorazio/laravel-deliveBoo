@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BraintreeController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\MealController;
 use App\Http\Controllers\Api\RestaurantController;
@@ -21,3 +22,5 @@ Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/restaurants', [RestaurantController::class, 'index']);
 Route::get('/restaurant/show/{id}', [RestaurantController::class, 'show']);
 Route::get('/meals/{id}', [MealController::class, 'index']);
+
+Route::get('/braintree/token', [BraintreeController::class, 'generateToken']);
