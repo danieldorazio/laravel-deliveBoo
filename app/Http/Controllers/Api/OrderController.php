@@ -46,20 +46,22 @@ class OrderController extends Controller
 
             // ricevo un array di piatti devo spacchettarli, devo prendere l'id dellordine appena creato 
 
-            // $cart = json_decode($form_data['cart'], true);
+            $cart = json_decode($form_data['cart'], true);
+            $cartPrimo = $cart[0]['id'];
 
-            // foreach ($cart as $meal) {
+            foreach ($cart as $meal) {
 
-            //     $meal_order = new Meal_order();
-            //     $meal_order->meal_id = $meal->id;
-            //     $meal_order->order_id = 25;
-            //     $meal_order->quantity = $meal->quantity;
-            //     $meal_order->save();
-            //     return response()->json([
-            //         'result' => true,
-            //         "message" => $meal,
-            //     ]);
-            // }
+                $meal_order = new Meal_order();
+                $meal_order->meal_id = $meal['id'];
+                $meal_order->order_id = $order->id;
+                $meal_order->quantity = $meal['quantity'];
+                $meal_order->save();
+            }
+            
+            return response()->json([
+                'result' => true,
+                "message" => $meal['id'],
+            ]);
         }
     }
 }
