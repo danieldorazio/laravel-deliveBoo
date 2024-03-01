@@ -56,7 +56,7 @@ class OrderController extends Controller
             // ricevo un array di piatti devo spacchettarli, devo prendere l'id dellordine appena creato con $oreder->id si puo fare
 
             $cart = json_decode($form_data['cart'], true);
-            $cartPrimo = $cart[0]['id'];
+            // $cartPrimo = $cart[0]['id'];
 
             foreach ($cart as $meal) {
 
@@ -71,7 +71,7 @@ class OrderController extends Controller
 
             return response()->json([
                 'result' => true,
-                // "message" =>  Auth::user($cart[0]['restaurant_id'])->email,
+                 "message" =>  'Payment completed successfully',
             ]);
         }
     }
