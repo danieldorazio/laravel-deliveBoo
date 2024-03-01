@@ -3,13 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\newOrder;
+use App\Mail\newUserOrder;
 use App\Models\Meal;
 use App\Models\Meal_order;
 use App\Models\Order;
+use App\Models\User;
 use Braintree\Gateway;
 use Braintree\Test\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -41,10 +46,14 @@ class OrderController extends Controller
 
             // $lastOrder = DB::table('orders')->orderBy('id', 'desc')->first();
 
+            // $restaurantUser = User::w
 
 
+            Mail::to($form_data['client_email'])->send(new newOrder($order));
+            // Mail::to(Auth::user()->email)->send(new newUserOrder($order));
 
-            // ricevo un array di piatti devo spacchettarli, devo prendere l'id dellordine appena creato 
+
+            // ricevo un array di piatti devo spacchettarli, devo prendere l'id dellordine appena creato con $oreder->id si puo fare
 
             $cart = json_decode($form_data['cart'], true);
             $cartPrimo = $cart[0]['id'];
@@ -57,10 +66,12 @@ class OrderController extends Controller
                 $meal_order->quantity = $meal['quantity'];
                 $meal_order->save();
             }
-            
+
+
+
             return response()->json([
                 'result' => true,
-                "message" => $meal['id'],
+                // "message" =>  Auth::user($cart[0]['restaurant_id'])->email,
             ]);
         }
     }
