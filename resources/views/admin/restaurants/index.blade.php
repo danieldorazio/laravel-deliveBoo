@@ -11,7 +11,6 @@
                 <th scope="col">Name</th>
                 <th>Info</th>
                 <th>Edit</th>
-                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -27,15 +26,6 @@
                         <a class="btn btn-outline-warning" href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant_elem->slug]) }}">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
-                    </td>
-                    <td>
-                        <form action="{{ route('profile.destroy') }}" class="d-inline-block" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-outline-danger delete-btn mx-2" type="submit" data-title="your restaurant? If you proceed, your account will also be deleted. Do you wish to continue?">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
                     </td>
                   </tr>
                 @endforeach 

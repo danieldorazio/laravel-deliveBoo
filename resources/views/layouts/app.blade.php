@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>DeliveBoo</title>
 
 
     <!-- Fonts -->
@@ -17,6 +17,11 @@
     <link rel="icon" type="image/x-icon" href="{{Vite::asset('resources/img/favicon-16x16.png')}}">
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
 </head>
 
 <body class="">
@@ -26,9 +31,9 @@
             
                 <nav class="navbar navbar-expand-md navbar-light  ">
                     <div class="container">
-                        <a class="navbar-brand d-flex align-items-center text-light" href="{{ url('/') }}">
-                            <div class="logo_laravel">
-                                <img src="{{Vite::asset('resources/img/logo.png')}}" alt="">
+                        <a class="navbar-brand d-flex align-items-center text-light" href="{{ url('http://localhost:5173/')}}">
+                            <div class="btn">
+                                <img src="{{Vite::asset('resources/img/deliveboo_logo.jpg')}}" alt="" class="img-vue rounded-pill">
                             </div>
                             {{-- config('app.name', 'Laravel') --}}
                         </a>

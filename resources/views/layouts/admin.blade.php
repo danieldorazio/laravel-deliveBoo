@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>DeliveBoo</title>
 
     <!-- Fontawesome 6 cdn -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'
@@ -82,6 +82,12 @@
                                     <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.index' ? 'my-back-link-left' : '' }}"
                                         href="{{ route('admin.meals.index') }}">
                                         <i class="fa-solid fa-drumstick-bite fa-lg fa-fw"></i> My Menú
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.meals.trash' ? 'my-back-link-left' : '' }}"
+                                        href="{{ route('admin.meals.trash') }}">
+                                        <i class="fa-solid fa-trash-can fa-lg fa-fw"></i> Deleted meals
                                     </a>
                                 </li>
                                 <li class="nav-item">

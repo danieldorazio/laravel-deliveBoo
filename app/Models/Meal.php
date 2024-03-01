@@ -14,21 +14,25 @@ class Meal extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name','slug','image','description','price','available', 'restaurant_id'];
+    protected $fillable = ['name', 'slug', 'image', 'description', 'price', 'available', 'restaurant_id'];
 
-    protected function setNameAttribute($_name) {
+    protected function setNameAttribute($_name)
+    {
         $this->attributes['name'] = $_name;
         $this->attributes['slug'] = Str::slug($_name);
-        // $_id = Auth::user()->id;
-        // $this->attributes['restaurant_id'] = $_id ;
+        if (Auth::check()) {
+            $_id = Auth::user()->id;
+            $this->attributes['restaurant_id'] = $_id ;
+        }
     }
 
-    public function restaurant() {
+    public function restaurant()
+    {
         return $this->belongsTo(Restaurant::class);
     }
 
-    public function orders() {
+    public function orders()
+    {
         return $this->belongsToMany(Order::class);
     }
-
 }

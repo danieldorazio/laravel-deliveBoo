@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        <h2>Menú</h2>
+        <h2>Deleted meals</h2>
 
         <div class="text-end">
             <form action="{{ route('admin.meals.trash.deleteall') }}" method="POST" class="d-inline-block">
@@ -19,7 +19,7 @@
                     <tr>
                         {{-- <th scope="col">Id</th> --}}
                         <th scope="col">Name</th>
-                        <th>Details</th>
+                        <th>Restore</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
