@@ -1,40 +1,33 @@
 @extends('layouts.admin')
+@php
+    $counter = 1    
+@endphp
 
 @section('content')
     <div class="container mt-5">
         <h2>List of Orders</h2>
     </div>
 
-    {{-- @if (count($orders) > 0)
-        @foreach ($orders as $order)
-            @if (count($order->meals) > 0)
-                @foreach ($order->meals as $meal)
-                    @if ($meal->restaurant_id === Auth::user()->id)
-                        {{$order->id}}
-                        {{$order->client_name}}
-                    @endif
-                @endforeach
-            @endif
-        @endforeach
-    @else
-        <div class="alert alert-warning mt-2">
-            <p>No orders available</p>
-        </div>
-    @endif --}}
-
     @if (count($orders) > 0)
+    
         <table class="table table-striped mt-5">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Name</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Client name</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Date</th>
+                    <th scope="col">Info</th>
+
+                    
                 </tr>
             </thead>
             <tbody>
                 @foreach ($orders as $order)
                     <tr>
-                        <th></th>
+                        <th>{{ $counter++ }}</th>
                         <td>{{ $order->client_name }}</td>
                         <td>{{ $order->payment }}</td>
                         <td>{{ $order->client_email }}</td>
