@@ -9,11 +9,13 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Order;
+use Illuminate\Support\Facades\DB;
 
 class newOrder extends Mailable
 {
     use Queueable, SerializesModels;
 
+    // public $cart;
     public $order;
 
 
@@ -24,6 +26,7 @@ class newOrder extends Mailable
      */
     public function __construct($_order)
     {
+        // $this->cart = $_cart;
         $this->order = $_order;
     }
 
@@ -49,6 +52,12 @@ class newOrder extends Mailable
     {
         return new Content(
             view: 'emails.new-order-email',
+            with: [
+                'orderName' => $this->order->client_name,
+                'orderDate' => $this->order->delivery_time,
+                'orderAddress' => $this->order->delivery_address,
+                'orderPhone' => $this->order->client_phone,
+            ],
         );
     }
 

@@ -48,7 +48,6 @@ class OrderController extends Controller
 
             // $restaurantUser = User::w
 
-
             Mail::to($form_data['client_email'])->send(new newOrder($order));
             // Mail::to(Auth::user()->email)->send(new newUserOrder($order));
 
@@ -69,9 +68,10 @@ class OrderController extends Controller
 
 
 
+
             return response()->json([
                 'result' => true,
-                 "message" =>  'Payment completed successfully',
+                "message" =>  'Payment completed successfully',
             ]);
         }
     }
