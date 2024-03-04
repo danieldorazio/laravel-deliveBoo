@@ -501,7 +501,7 @@ return [
         "restaurant_id" => 62,
     ],
     [
-        "category_id"   => 37,
+        "category_id"   => 7,
         "restaurant_id" => 62,
     ],
     [
