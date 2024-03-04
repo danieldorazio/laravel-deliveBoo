@@ -645,7 +645,7 @@ return [
         "id"              => 65,
         "user_id"         => 65,
         "restaurant_name" => "Sunrise Cafe",
-        "image"           => "restaurant_images/cafe.png",
+        "image"           => "restaurant_images/cafe.jpg",
         "street"          => "via Sunrise Cafe",
         "time_open"       => '08:00:00',
         "time_close"      => '21:00:00',
