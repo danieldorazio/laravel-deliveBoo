@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@php
+    $order_number = count($orders)    
+@endphp
 @section('content')
     <div class="container mt-5">
         <h2>List of Orders</h2>
@@ -24,7 +26,7 @@
             <tbody>
                 @foreach ($orders as $order)
                     <tr>
-                        <th>{{ $order->id }}</th>
+                        <th>{{ $order_number-- }}</th>
                         <td>{{ $order->client_name }}</td>
                         <td>{{ $order->payment }}</td>
                         <td>{{ $order->client_email }}</td>
