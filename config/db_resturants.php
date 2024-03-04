@@ -345,7 +345,7 @@ return [
         "id"              => 35,
         "user_id"         => 35,
         "restaurant_name" => "Mystic Mexico",
-        "image"           => "restaurant_images/El_Ranchito_Mexicano.jpeg",
+        "image"           => "restaurant_images/El_Ranchito_Mexicano.jpg",
         "street"          => "via Mystic Wok",
         "time_open"       => '08:00:00',
         "time_close"      => '21:00:00',
