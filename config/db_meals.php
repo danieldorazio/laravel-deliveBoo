@@ -1981,7 +1981,7 @@ return [
         "id" => 220,
         "restaurant_id" => 56,
         "name" => "Gelato 1",
-        "image" => "meal_images/Anatra_alla_pechinese.jpg",
+        "image" => "meal_images/icecream.jpg",
         "description" => "Il gelato alla fragola incanta i sensi con la sua cremosità vellutata e il gusto fresco e fruttato delle fragole appena raccolte.",
         "price" => 16.00,
         "available" => 1,
