@@ -52,9 +52,10 @@
 }
 
 
-.my-back-pattern{
-    background-color: rgba($color: #000000, $alpha: 0.2);
-}
+// .my-back-pattern{
+//     // background-color: rgba($color: #000000, $alpha: 0.2);
+//     background-image: url(../img/bg-pattern.jpg);
+// }
 
 .my-back-pattern-2{
     background-image: url(../img/bg-pattern.jpg);
@@ -63,4 +64,19 @@
 
 .my-color-text-orange{
     color: #ffcc33;
+}
+
+
+.my-back-pattern {
+    position: relative;
+}
+
+.my-back-pattern::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(../img/bg-pattern.jpg);
+    filter: invert(90%);
 }
