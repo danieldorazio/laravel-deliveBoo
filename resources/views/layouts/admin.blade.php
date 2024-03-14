@@ -34,7 +34,7 @@
             <div class="row justify-content-between">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
                     <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="" class="my-logo-dashboard">
-                    <p class="text-light fs-5 d-inline-block">DeliveBoo</p>
+                    <p class="text-black fs-5 d-inline-block">DeliveBoo</p>
                 </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
@@ -44,7 +44,7 @@
             </div>
             <div class="navbar-nav">
                 <div class="nav-item text-nowrap ms-2">
-                    <a class="btn btn-light text-info" href="{{ route('logout') }}"
+                    <a class="btn btn-light text-black" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
@@ -62,7 +62,7 @@
         aggiungere i link necessari giorno per giorno
         -->
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse"
-                    style="background-color: #27187E">
+                    style="background-color: black">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
@@ -103,7 +103,7 @@
                     </div>
                 </nav>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 my-back-pattern" >
                     @yield('content')
                 </main>
             </div>

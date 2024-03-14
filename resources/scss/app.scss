@@ -16,11 +16,12 @@
 }
 
 .my-back-navbarleft{
-    background-color: #27187E;
+    //background-color: #27187E;
+    background-color: black;
 }
 
 .my-back-main-navbar{
-    background-color: #75BBFD;
+    background-color: #ffcc33;
 }
 
 .my-logo-dashboard{
@@ -29,7 +30,8 @@
 }
 
 .my-back-link-left{
-    background-color: #AEB8FE;
+    //background-color: #AEB8FE;
+    background-color: #FAA343;
 }
 
 .my-logo-restaurant-and-food{
@@ -47,4 +49,15 @@
 // validation
 .error-help-block {
     color: red;
+}
+
+
+.my-back-pattern{
+    background-color: rgba($color: #000000, $alpha: 0.2);
+}
+
+
+
+.my-color-text-orange{
+    color: #ffcc33;
 }
