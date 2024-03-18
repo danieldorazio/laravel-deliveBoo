@@ -14,6 +14,7 @@
                 <th>Details</th>
                 <th>Edit</th>
                 <th>Delete</th>
+                <th>Availability</th>
               </tr>
             </thead>
             <tbody>
@@ -39,6 +40,9 @@
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>
+                    </td>
+                    <td @class($meal->available ? 'text-success':'text-danger')>
+                        {{ $meal->available ? 'Available':' Not available'}}
                     </td>
                   </tr>
                 @endforeach 

@@ -31,10 +31,10 @@
     <div id="app">
 
         <header class="navbar navbar-dark sticky-top my-back-main-navbar flex-md-nowrap p-2 shadow">
-            <div class="row justify-content-between">
+            <div class="row justify-content-between rounded-pill bg-dark ms-2">
                 <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">
                     <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="" class="my-logo-dashboard">
-                    <p class="text-black fs-5 d-inline-block">DeliveBoo</p>
+                    <p class="text-white fs-5 d-inline-block">DeliveBoo</p>
                 </a>
                 <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                     data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
