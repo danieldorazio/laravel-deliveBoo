@@ -4,7 +4,7 @@
 <div class="container mt-4 text-light">
 
     <div class="text-center">
-        <h1> <strong>Grow your online business with <span class="text-info">Deliveboo</span></strong></h1>
+        <h1> <strong>Grow your online business with <span class="text-warning">Deliveboo</span></strong></h1>
 
         <p class="  fs-4 ">Sign up and become a partner. Sell more, increase your earnings, and manage your online business with us. Your digitization journey starts here.</p>
 
@@ -72,7 +72,7 @@
 
                         <div class="mb-4 row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-info">
+                                <button type="submit" class="btn btn-warning">
                                     {{ __('Sign up') }}
                                 </button>
                             </div>

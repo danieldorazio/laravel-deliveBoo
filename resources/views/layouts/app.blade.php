@@ -53,26 +53,26 @@
                                 <!-- Authentication Links -->
                                 @guest
                                     <li class="nav-item ">
-                                        <a class=" btn btn-light text-info " href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class=" btn btn-light text-warning " href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
                                     @if (Route::has('register'))
                                         <li class="nav-item ps-2">
-                                            <a class=" btn btn-info text-light"
+                                            <a class=" btn btn-warning text-light"
                                                 href="{{ route('register') }}">{{ __('Sign up') }}</a>
                                         </li>
                                     @endif
                                 @else
                                     <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-info fs-5 " href="#"
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle text-warning fs-5 " href="#"
                                             role="button" data-bs-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-right bg-body bg-opacity-50" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item text-info "
+                                        <div class="dropdown-menu dropdown-menu-right bg-dark bg-opacity-50" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item text-warning "
                                                 href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
-                                            <a class="dropdown-item text-info" href="{{ route('logout') }}"
+                                            <a class="dropdown-item text-warning" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
